@@ -105,13 +105,6 @@ int main()
     printf("Enter the second number: ");
     scanf("%d", &number_two);
 
-    /*Checking if the user has input zero or not*/
-    if (number_one == 0 || number_two == 0)
-    {
-        printf("Zero with any other number don't have any HCF.");
-        exit(0);
-    }
-
     /*Calling the function and storing the value  in hcf*/
     hcf = HCF(number_one, number_two);
 
