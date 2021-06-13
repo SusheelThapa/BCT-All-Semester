@@ -1,5 +1,5 @@
 /* 
-    Program to check whether the number entered by the user input
+    Program to check whether the number entered by the user is Harshad or not
 */
 
 /*Header Files*/
