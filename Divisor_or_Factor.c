@@ -8,12 +8,11 @@
 /*
     Logic of code:
     Factors of the number are those number which exactly divides the number leave 0 reaminder.
-
     Here, 
     -->We just divide the number from 1 to n(user_input_number) and store the remainder
     --> Check remainder is equals to 0 
         True: It is divisor/factor. And we just print it 
-        False: It si not the divisior. We iterate over next number.
+        False: It is not the divisior. We iterate over next number.
 */
 int main()
 {
