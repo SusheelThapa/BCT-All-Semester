@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
+// #include<time.h>
 /*
 Logic of code:
 
@@ -38,6 +39,8 @@ long long int combination(long long int upValue, long long int downValue)
 }
 long long int main()
 {
+    // clock_t start, end;
+    // start = clock();
     long long int number;
     system("cls");
     printf("Value of number: ");
@@ -54,6 +57,8 @@ long long int main()
             }
         printf("\n");
     }
+    // end = clock();
+    // printf("Time of execution is %f", ((double)(end - start)) / CLOCKS_PER_SEC);
     getch();
     return 0;
 }
