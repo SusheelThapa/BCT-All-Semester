@@ -37,27 +37,32 @@ For small ASCII Difference is 32
 
 */
 
+/*Importing header files*/
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
 
 int main()
 {
-    system("cls");
-    for (int i = 0; i <5; i++)
+    system("cls"); /*CLear the screen*/
+
+    /*Double for loop*/
+    for (int i = 0; i < 5; i++)
     {
         for (int j = 0; j <= i; j++)
         {
             if (i % 2 == 0 && j % 2 != 0)
             {
-                printf("%c ",65+j+32);
+                printf("%c ", 65 + j + 32);
             }
-            else{
-                printf("%c ",65+j);
+            else
+            {
+                printf("%c ", 65 + j);
             }
         }
         printf("\n");
     }
-    getch();
+
+    getch(); /*Waits till a key is pressed*/
     return 0;
 }
