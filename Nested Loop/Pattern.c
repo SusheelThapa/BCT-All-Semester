@@ -27,7 +27,7 @@ int main()
     {
         for (int j = 1; j <= n; j++)
         {
-            /*Condition toprint the pattern*/
+            /*Condition to print the pattern*/
             if (i >= j)
             {
                 printf("%d ", j);
