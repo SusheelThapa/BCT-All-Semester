@@ -62,14 +62,11 @@ Logic of code:
                 above loop copy paste
             }
 */
-int main()
-{
-    /*Declaration of required variable*/
-    int number, i;
 
-    /* Taking user input */
-    printf("Enter the number: ");
-    scanf("%d", &number);
+void primeNumber(int number)
+{
+
+    int i; /*Declaration of i*/
 
     /*Below lines are explained above*/
     i = number - 1;
@@ -98,6 +95,19 @@ int main()
             }
         }
     }
+}
+int main()
+{
+    /*Declaration of required variable*/
+    int number;
+
+    /* Taking user input */
+    printf("Enter the number: ");
+    scanf("%d", &number);
+
+    primeNumber(number);
+
+    return 0;
 }
 
 /*If you have better idea, feel free to contact us*/
