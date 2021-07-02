@@ -18,28 +18,21 @@
     -->
 
 */
-int main()
+
+/*Function to evaluate leap year*/
+void leapYear(unsigned int year)
 {
-    /*Declaration of uesd variable*/
-    unsigned int user_input_year, divisible_by_four, divisible_by_hundered, divisible_by_four_hundered;
 
-    system("cls"); /*Clear the terminal screen*/
-
-    /*Taking user input */
-    printf("Enter the year after 1582?\n");
-    scanf("%d", &user_input_year);
-
-    system("cls");                         /*Clear the terminal screen*/
-    printf("Year: %d\n", user_input_year); /*Prints the user input year*/
+    unsigned int divisible_by_four, divisible_by_hundered, divisible_by_four_hundered;
 
     /*Below if check whether the year enter in after 1582 or not*/
-    if (user_input_year >= 1582)
+    if (year >= 1582)
     {
 
         /*Needed tool for checking the variable*/
-        divisible_by_four = user_input_year % 4;
-        divisible_by_hundered = user_input_year % 100;
-        divisible_by_four_hundered = user_input_year % 400;
+        divisible_by_four = year % 4;
+        divisible_by_hundered = year % 100;
+        divisible_by_four_hundered = year % 400;
 
         /*Check the condition to be a leap year*/
         if (divisible_by_four == 0)
@@ -62,6 +55,22 @@ int main()
     {
         printf("You didn't give input as per asked in questions.");
     }
+}
+int main()
+{
+    /*Declaration of uesd variable*/
+    unsigned int user_input_year, divisible_by_four, divisible_by_hundered, divisible_by_four_hundered;
+
+    system("cls"); /*Clear the terminal screen*/
+
+    /*Taking user input */
+    printf("Enter the year after 1582?\n");
+    scanf("%d", &user_input_year);
+
+    system("cls");                         /*Clear the terminal screen*/
+    printf("Year: %d\n", user_input_year); /*Prints the user input year*/
+
+    leapYear(user_input_year); /*Calling the funtion*/
 
     getch();
     return 0;
