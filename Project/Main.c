@@ -2,11 +2,31 @@
 #include <conio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "D:\Coding Universe\Code With C\Project\bank.c"
-#include "D:\Coding Universe\Code With C\Project\Account.c"
+
 
 int login_status;
+#define MAX_LIMIT 100
 
+struct BankingOptions
+{
+    char option[MAX_LIMIT];
+};
+
+struct UserDetails
+{
+    char name[MAX_LIMIT], address[MAX_LIMIT], email[MAX_LIMIT], phone_number[MAX_LIMIT];
+};
+
+char username[MAX_LIMIT], password[MAX_LIMIT];
+struct BankingOptions Option[100];
+
+struct UserDetails user;
+
+#include "D:\Coding Universe\Code With C\Project\Statement.c"
+#include "D:\Coding Universe\Code With C\Project\Interactivepage.c"
+#include "D:\Coding Universe\Code With C\Project\Login.c"
+#include "D:\Coding Universe\Code With C\Project\Signup.c"
+#include "D:\Coding Universe\Code With C\Project\Option.c"
 int main()
 {
     int choice;
@@ -61,7 +81,6 @@ int main()
         case 1:
         {
             interactivePage("Account Status");
-            accountStatus(username);
             break;
         }
         case 2:
@@ -77,6 +96,11 @@ int main()
         case 4:
         {
             interactivePage("Send Money");
+            break;
+        }
+        case 5:
+        {
+            interactivePage("Statements");
             break;
         }
         default:
