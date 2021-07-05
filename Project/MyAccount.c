@@ -1,4 +1,4 @@
-void accountStatus() {
+void myAccount() {
 
 	char user_name[MAX_LIMIT], account_number[MAX_LIMIT], balance[MAX_LIMIT];
 
