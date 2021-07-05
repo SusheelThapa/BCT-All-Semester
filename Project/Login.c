@@ -17,10 +17,7 @@ int logIn()
             {
                 return 1;
             }
-            else
-            {
-                fscanf(in, "%s", pass_code);
-            }
+            
         }
         fscanf(in, "%s", user_id);
     }
