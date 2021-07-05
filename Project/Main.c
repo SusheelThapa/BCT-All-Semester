@@ -2,15 +2,14 @@
 #include <conio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 
+int choice;
 int login_status;
 #define MAX_LIMIT 100
 
-struct BankingOptions
-{
-    char option[MAX_LIMIT];
-};
+
 
 struct UserDetails
 {
@@ -18,7 +17,6 @@ struct UserDetails
 };
 
 char username[MAX_LIMIT], password[MAX_LIMIT];
-struct BankingOptions Option[100];
 
 struct UserDetails user;
 
@@ -26,10 +24,13 @@ struct UserDetails user;
 #include "D:\Coding Universe\Code With C\Project\Interactivepage.c"
 #include "D:\Coding Universe\Code With C\Project\Login.c"
 #include "D:\Coding Universe\Code With C\Project\Signup.c"
-#include "D:\Coding Universe\Code With C\Project\Option.c"
+#include "D:\Coding Universe\Code With C\Project\Esewa.c"
+#include "D:\Coding Universe\Code With C\Project\Khalti.c"
+#include "D:\Coding Universe\Code With C\Project\Sendmoney.c"
+#include "D:\Coding Universe\Code With C\Project\Payment.c"
+#include "D:\Coding Universe\Code With C\Project\Accountstatus.c"
 int main()
 {
-    int choice;
     int signup_status;
 
     interactivePage("Welcome");
@@ -108,7 +109,31 @@ int main()
             interactivePage("ERROR");
         }
         }
+
+        printf("\n\n%48s", "Chose any one of above : ");
+        scanf("%d", &choice);
+        switch (choice) {
+        case 1:
+        {
+            interactivePage("ESEWA");
+            break;
+        }
+        case 2:
+        {
+            interactivePage("Khalti");
+            break;
+        }
+        default:
+        {
+            printf("!!!ERROR!!!");
+            break;
+        }
+        }
+    
+    
+
     }
+    
 
     getch();
     return 0;
