@@ -37,7 +37,7 @@ void interactivePage(char identify[MAX_LIMIT])
         printf("%35s", "Password: ");
         scanf("%s", password);
     }
-    
+
     else if (strcmp(identify, "Account Page") == 0)
     {
         printf("%42s\n", "1.Account Status");
@@ -46,34 +46,54 @@ void interactivePage(char identify[MAX_LIMIT])
         printf("%42s\n", "4.Send Money");
         printf("%42s\n", "5.Statements");
     }
-   
+
     else if (strcmp(identify, "Account Status") == 0)
     {
-        
-        accountStatus();
+        myAccount();
     }
     else if (strcmp(identify, "Load Wallet") == 0)
     {
         printf("%42s\n", "1.Esewa");
         printf("%42s\n", "2.Khalti");
-        
-        
+    }
+    else if (strcmp(identify, "ESEWA") == 0)
+    {
+
+        printf("%42s: ", "Amount");
+        scanf("%lld", &esewa_amount);
+        printf("%42s: ", "Esewa ID");
+        scanf("%lld", &esewa_id);
+        printf("%42s", "Purpose: ");
+        scanf("%42[^.]", esewa_purpose);
+    }
+    else if (strcmp(identify, "Khalti") == 0)
+    {
+
+        printf("%42s: ", "Amount");
+        scanf("%lld", &khalti_amount);
+        printf("%42s: ", "Khalti ID");
+        scanf("%lld", &khalti_id);
+        printf("%42s", "Purpose: ");
+        scanf("%[^.]", khalti_purpose);
     }
     else if (strcmp(identify, "Payment") == 0)
     {
-    }
+        }
     else if (strcmp(identify, "Send Money") == 0)
     {
+        printf("%42s", "Amount: ");
+        scanf("%lld", &payment_amount);
+        printf("%42s", "To Account: ");
+        scanf("%s", payment_account_number);
+        printf("%42s", "Account Name: ");
+        scanf("%s", payment_account_name);
+        printf("%42s%s", "From Account: ", "");
     }
-    else if (strcmp(identify, "Statements") == 0) {
+    else if (strcmp(identify, "Statements") == 0)
+    {
         statement();
     }
-    else if (strcmp(identify, "ESEWA") == 0) {
-
-    }
-    else if (strcmp(identify, "Khalti") == 0) {
-
-    }
+    
     else if (strcmp(identify, "ERROR") == 0)
     {
         printf("%42s\n", "!!!ERROR!!!");
