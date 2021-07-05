@@ -4,12 +4,17 @@
 #include <string.h>
 #include <time.h>
 
+#define MAX_LIMIT 100
 
 int choice;
 int login_status;
-#define MAX_LIMIT 100
+long long int esewa_amount, esewa_id;
+char esewa_purpose[MAX_LIMIT];
+long long int khalti_amount, khalti_id;
+char khalti_purpose[MAX_LIMIT];
 
-
+long long int payment_amount;
+char payment_account_number[MAX_LIMIT], payment_account_name[MAX_LIMIT];
 
 struct UserDetails
 {
@@ -28,7 +33,7 @@ struct UserDetails user;
 #include "D:\Coding Universe\Code With C\Project\Khalti.c"
 #include "D:\Coding Universe\Code With C\Project\Sendmoney.c"
 #include "D:\Coding Universe\Code With C\Project\Payment.c"
-#include "D:\Coding Universe\Code With C\Project\Accountstatus.c"
+#include "D:\Coding Universe\Code With C\Project\MyAccount.c"
 int main()
 {
     int signup_status;
@@ -87,16 +92,47 @@ int main()
         case 2:
         {
             interactivePage("Load Wallet");
+            printf("\n\n%48s", "Chose any one of above : ");
+            scanf("%d", &choice);
+            switch (choice)
+            {
+            case 1:
+            {
+                interactivePage("ESEWA");
+                printf("Press any key to send...\n\n");
+                getch();
+
+                printf("%lld amount has been send to %lld esewa id.\n", esewa_amount, esewa_id);
+                break;
+            }
+            case 2:
+            {
+                interactivePage("Khalti");
+                printf("Press any key to send...\n\n");
+                getch();
+                printf("%lld amount has been send to %lld khalti id.\n", khalti_amount, khalti_id);
+                break;
+            }
+            default:
+            {
+                printf("!!!ERROR!!!");
+                break;
+            }
+            }
             break;
         }
         case 3:
         {
             interactivePage("Payment");
+
             break;
         }
         case 4:
         {
             interactivePage("Send Money");
+            printf("%40s", "Press any key to send...\n\n");
+            getch();
+            printf("%lld amount has be tranfer from %s to %s.\n", payment_amount, payment_account_number, "4567832138");
             break;
         }
         case 5:
@@ -109,31 +145,7 @@ int main()
             interactivePage("ERROR");
         }
         }
-
-        printf("\n\n%48s", "Chose any one of above : ");
-        scanf("%d", &choice);
-        switch (choice) {
-        case 1:
-        {
-            interactivePage("ESEWA");
-            break;
-        }
-        case 2:
-        {
-            interactivePage("Khalti");
-            break;
-        }
-        default:
-        {
-            printf("!!!ERROR!!!");
-            break;
-        }
-        }
-    
-    
-
     }
-    
 
     getch();
     return 0;
