@@ -19,6 +19,10 @@ int logIn()
             }
             
         }
+        else {
+            fscanf(in, "%s", pass_code);
+
+        }
         fscanf(in, "%s", user_id);
     }
     fclose(in);
