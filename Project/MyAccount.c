@@ -14,6 +14,11 @@ void myAccount() {
 			fscanf(outAccountStatus, "%s", user_name);
 
 		}
+		else {
+			fscanf(outAccountStatus, "%s %s", account_number, balance);
+			fscanf(outAccountStatus, "%s", user_name);
+
+		}
 	}
 }
 
