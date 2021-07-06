@@ -64,7 +64,7 @@ void interactivePage(char identify[MAX_LIMIT])
         printf("%42s: ", "Esewa ID");
         scanf("%lld", &esewa_id);
         printf("%42s", "Purpose: ");
-        scanf("%42[^.]", esewa_purpose);
+        scanf("%42s", esewa_purpose);
     }
     else if (strcmp(identify, "Khalti") == 0)
     {
@@ -74,7 +74,7 @@ void interactivePage(char identify[MAX_LIMIT])
         printf("%42s: ", "Khalti ID");
         scanf("%lld", &khalti_id);
         printf("%42s", "Purpose: ");
-        scanf("%[^.]", khalti_purpose);
+        scanf("%42s", khalti_purpose);
     }
     else if (strcmp(identify, "Payment") == 0)
     {
