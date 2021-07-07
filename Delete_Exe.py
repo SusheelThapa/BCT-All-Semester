@@ -9,14 +9,13 @@ Note:
         You need to have python installed in your computer
 
         Execute the command:
-            python Make_Exe.py 
+            python Delete_Exe.py 
 '''
 
 import os
 
 list = os.listdir()
 
-# list.remove("Delete_Exe.py")
 
 for items in list:
     if items.endswith(".exe"):

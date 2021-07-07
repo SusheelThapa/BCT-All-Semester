@@ -21,7 +21,6 @@ import os
 
 list_of_c = os.listdir()
 
-list_of_c.remove("Make_Exe.py")
 
 for items in list_of_c:
     if items.endswith(".c"):
