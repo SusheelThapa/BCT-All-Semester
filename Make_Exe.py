@@ -6,7 +6,7 @@ So i created this program that will generate me .exe files of all c program
 
 Note:
     This python file and c programsfiles should be in same folder
-    Folder should contain only .c files if other files/folder is present then it will through error.
+    Folder should contain only .c files if other files/folder is present then it may through error.
     To run this file,
 
         You need to have python installed in your computer
@@ -23,6 +23,7 @@ list_of_c = os.listdir()
 
 list_of_c.remove("Make_Exe.py")
 
-for c_program in list_of_c:
-    os.system(f'gcc {c_program} -o {c_program.replace(".c","")}')
+for items in list_of_c:
+    if items.endswith(".c"):
+        os.system(f'gcc {items} -o {items.replace(".c","")}')
 
