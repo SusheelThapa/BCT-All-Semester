@@ -14,14 +14,13 @@ Questions:
 #include <conio.h>
 #include <stdlib.h>
 #include <unistd.h>
-
 int main()
 {
     /*Variable declaration and initialization on some variable*/
     int user_pick, computer_pick = 0, total_match_stick = 21, winner;
     int remaining_matchstick = total_match_stick;
 
-    system("cls"); /*Clear the screen */
+    // system("cls"); /*Clear the screen */
 
     printf("Total Match Stick: %d\n\n", total_match_stick); /*Prints the total match sticks*/
 
