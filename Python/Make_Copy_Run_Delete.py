@@ -61,7 +61,7 @@ for item in cwd_files_folders:
         time.sleep(2)
         os.system(f'del {item.replace(".c",".exe")}')
 
-        print(f"{item.replace(".c", ".exe")} is deleted...")
+        print(f"{item.replace('.c', '.exe')} is deleted...")
         print("Press any key to continue...")
 
         a = input()
