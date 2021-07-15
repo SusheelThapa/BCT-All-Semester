@@ -23,24 +23,18 @@
 '''
 
 
-
 import os
 import pyperclip
 
-list = os.listdir()
+cwd_files_folders = os.listdir()
 
-for items in list:
-
-    if items.endswith(".c"):
-
-        with open(items,"r") as f:
-
+for item in cwd_files_folders:
+    if item.endswith(".c"):
+        with open(item, "r") as f:
             code = f.read()
             pyperclip.copy(code)
-            print(f"Code copied form {items}\nPress any key to copy code from next file..")
+            print(
+                f"Code copied from {item}\nPress any key to copy code from next file..")
             a = input()
 
-print("All code has beem copied.\n\nGood to go...")
-
-
-
+print("All code has been copied.\n\nGood to go...")

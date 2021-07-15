@@ -18,41 +18,38 @@ Note:
         Execute the command:
 
             python Make_Copy_Run_Delete.py
-    
 '''
 
 import os
 import time
 import pyperclip
 
+cwd_files_folders = os.listdir()
 
-list_of_c = os.listdir()
-
-
-for items in list_of_c:
-    if items.endswith(".c"):
-
+for item in cwd_files_folders:
+    if item.endswith(".c"):
         os.system("cls")
 
-        print(f"Copying the code of {items}...\n")
+        print(f"Copying the code of {item}...\n")
         time.sleep(2)
-        with open(items, "r") as f:
+        with open(item, "r") as f:
             pyperclip.copy(f.read())
 
-        print(f"Code of {items} is copied in your clipboard.\nUse Ctrl + v to copy it...")
-        print("Press any key to run it...")
+        print(
+            f"Code of {item} is copied in your clipboard.\nUse Ctrl + v to paste it...")
+        print("Press any key make the executable file...")
 
         a = input()
 
         os.system("cls")
 
-        print(f"Compilation and Execution of {items}\n")
+        print(f"Compilation and Execution of {item}\n")
         time.sleep(2)
         os.system(
-            f'gcc {items} -o {items.replace(".c","")}')
-        os.system(f'.\\{items.replace(".c",".exe")}')
+            f'gcc {item} -o {item.replace(".c","")}')
+        os.system(f'.\\{item.replace(".c",".exe")}')
 
-        print(f"\n\n{items} execution completed.")
+        print(f"\n\n{item} execution completed.")
         print("Take your screen shot...")
         print("Press any key to start execution of second program...")
 
@@ -60,12 +57,11 @@ for items in list_of_c:
 
         os.system("cls")
 
-        print(f"Deleting the created {items}.exe file..\n")
+        print(f"Deleting the created {item}.exe file..\n")
         time.sleep(2)
-        os.system(f'del {items.replace(".c","")}.exe')
-        
-        print(f"{items}.exe is deleted...")
+        os.system(f'del {item.replace(".c",".exe")}')
+
+        print(f"{item.replace(".c", ".exe")} is deleted...")
         print("Press any key to continue...")
 
         a = input()
-
