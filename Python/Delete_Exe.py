@@ -3,7 +3,7 @@ After creating .exe files it will be very hard to delete all exe at once so I ha
 
 Note:
     This python file and .exe files should be in same folder
-    Folder should contain only .exe files and .c files will be filtered out if other files/folder is present then it may through error.
+    Folder should contain only .exe files and .c files will be filtered out if other files/folder is present then it may throw error.
     To run this file,
 
         You need to have python installed in your computer
@@ -14,12 +14,8 @@ Note:
 
 import os
 
-list = os.listdir()
+cwd_files_folders = os.listdir()
 
-
-for items in list:
-    if items.endswith(".exe"):
-       os.system(f"del {items}")
-    
-
-
+for item in cwd_files_folders:
+    if item.endswith(".exe"):
+        os.system(f"del {item}")
