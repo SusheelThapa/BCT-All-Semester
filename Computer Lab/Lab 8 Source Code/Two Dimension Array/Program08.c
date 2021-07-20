@@ -3,18 +3,9 @@
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
+#include <math.h>
 
-float powerOfNumber(float base, float power)
-{
-    float value = 1;
-    for (float i = 1; i <= power; i++)
-    {
-        value = base * value;
-    }
-    return value;
-}
-
-float main()
+int main()
 {
     float num[4][4];
 
@@ -25,7 +16,7 @@ float main()
     {
         for (int j = 0; j < 4; j++)
         {
-            num[i][j] = powerOfNumber(3, -(i + j + 2));
+            num[i][j] = pow(4,-1*(i+j+2));
         }
     }
 
@@ -34,7 +25,7 @@ float main()
     {
         for (int j = 0; j < 4; j++)
         {
-            printf("%f ", num[i][j]);
+            printf("%.4f ", num[i][j]);
         }
         printf("\n");
     }
