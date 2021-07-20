@@ -21,7 +21,7 @@ int main()
     system("cls");
 
     /*Input*/
-    printf("Enter the members of array: ");
+    printf("Enter the members of array: \n");
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
@@ -44,7 +44,7 @@ int main()
     {
         for (int j = 0; j < 3; j++)
         {
-            printf("%d ", num[i][j]);
+            printf("%5d ", num[i][j]);
         }
         printf("\n");
     }
