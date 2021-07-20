@@ -1,4 +1,5 @@
 /*Write a progam to find the highest or lowest elements of an array of size 3X3*/
+
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
@@ -9,7 +10,7 @@ int main()
 
     system("cls");
 
-    printf("Enter the members of array: ");
+    printf("Enter the members of array: \n");
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
@@ -30,8 +31,8 @@ int main()
         }
     }
 
-    printf("Highest Number is %d", highest);
-    printf("Lowest Number is %d", lowest);
+    printf("\nHighest Number is %d", highest);
+    printf("\n\nLowest Number is %d", lowest);
 
     getch();
     return 0;
