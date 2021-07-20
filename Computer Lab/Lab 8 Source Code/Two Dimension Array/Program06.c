@@ -3,8 +3,10 @@
 #include <conio.h>
 #include <stdlib.h>
 
-intdiagnolSum(int num[3][3])
+int diagnolSum(int num[3][3])
 {
+    "Calculates the sum of elements of diagnol elements";
+
     int sum = 0;
 
     for (int i = 0; i < 3; i++)
@@ -17,13 +19,14 @@ intdiagnolSum(int num[3][3])
     
     return sum;
 }
+
 int main()
 {
     int i, num[3][3], lowest, highest;
 
     system("cls");
 
-    printf("Enter the members of array: ");
+    printf("Enter the members of array: \n");
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
