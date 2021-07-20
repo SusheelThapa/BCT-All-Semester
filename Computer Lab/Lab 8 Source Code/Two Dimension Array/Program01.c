@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+
 void main()
 {
     int i, j, num[2][2] = {{4, 5}, {6, 7}};
@@ -8,6 +12,7 @@ void main()
         {
             printf("%d ", num[i][j]);
         }
+        printf("\n");
     }
 
     getch();
