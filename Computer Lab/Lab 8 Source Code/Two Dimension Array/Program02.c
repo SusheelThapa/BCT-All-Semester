@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+
 void main()
 {
     int i, j, num[3][3];
@@ -14,7 +18,7 @@ void main()
     {
         for (int j = 0; j < 3; j++)
         {
-            printf("%d ", &num[i][j]);
+            printf("%d ", num[i][j]);
         }
         printf("\n");
     }
