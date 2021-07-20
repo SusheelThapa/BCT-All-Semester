@@ -14,7 +14,7 @@ int main()
     {
         for (int j = 0; j < 10; j++)
         {
-            num[i][j] = i * 10 + j;
+            num[i][j] = (i) * 10 + (j);
         }
     }
 
@@ -28,15 +28,21 @@ int main()
         numSum[i] = sum;
     }
 
-    printf("Sum Array: ");
+    printf("Two Array: \n");
     for (int i = 0; i < 10; i++)
     {
         for (int j = 0; j < 10; j++)
         {
-            printf("%d ", num[i][j]);
+            printf("%3d ", num[i][j]);
         }
+        printf("\n");
     }
 
+    printf("\nSum Array: \n");
+    for (int i = 0; i < 10; i++)
+    {
+        printf("%d\n", numSum[i]);
+    }
     getch();
     return 0;
 }
