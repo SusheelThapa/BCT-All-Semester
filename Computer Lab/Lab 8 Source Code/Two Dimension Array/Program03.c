@@ -9,7 +9,7 @@ int main()
 
     system("cls");
 
-    printf("Enter the members of array: ");
+    printf("Enter the members of array:\n");
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
