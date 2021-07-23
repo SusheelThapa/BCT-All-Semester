@@ -57,10 +57,10 @@ int main()
     /*Taking value of Matrix One*/
     printf("Reading Matrix One: \n");
     printf("Rows: ");
-    scanf("%d", &rows_two);
+    scanf("%d", &rows_one);
     printf("Cols: ");
     scanf("%d", &cols_one);
-    takeInput(matrix_one, rows_two, cols_one);
+    takeInput(matrix_one, rows_one, cols_one);
 
     /*Taking value of Matrix Two*/
     printf("Reading Matrix Two: \n");
