@@ -1,0 +1,24 @@
+Pointer and Array
+
+~Pointer and array are related in many ways but they are not synonems
+. 
+~Array is non empty set of sequential set of element having the same type of elements.
+
+~Each elements of array has a unique identify index number.
+
+~The array name is itself is a pointer
+    DEMO
+    int marks[10]
+    p = marks //This is equivalent to p = &marks
+
+    One D array
+    Array notation                  Pointer notation
+      &marks[i]                        (marks +1)
+      marks[i]                         *(marks +i)
+
+    Two D array
+    Array notation                  Pointer notation
+     &marks[i][j]                    (*(marks+i) +j)
+     marks[i][j]                     *(*(marks+i) +j)
+
+
