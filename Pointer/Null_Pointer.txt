@@ -1,0 +1,36 @@
+~Null pointer is a pointer which has a value reserved for indicating that the pointer or reference does not refer to a valid object
+
+~A null pointer is guaranteed to compare unequal to any pointer that point to a valid object.
+
+~Dereferencing a null pointer is undefined behavior in C, and a comforming implemantation is allowed to assume that any pointer that is derefrenced is not null.
+
+~NULL pointer is specific pointer which is mentioned in C standard and it has specific purposes.
+
+NULL pointer gives teh functionality to c porgrammmer to check whether a pointer is legitimate or not
+
+Example
+int x= 10;
+int *p = NULL; //null pointer
+p = &x; //null pointer now holds address if int 'x'
+
+
+USE OF NULL POINTER
+~To initalize a pointer variable in cases where pointer variable has not been assigned any valid address yet
+
+~ To check for legitimate address location before accessing any pointer variable
+
+~By doing so, we can perform error handling while using pointer with C
+    Example of such error handling can be : derefrence pointer variable only if it's not NULL
+
+~To pass a null pointer to a function argument when we don't want to pass any valid memory address.
+
+MORE ON NULL POINTERS
+~NULL macro is defined as ((void)*0) in header files of most of the C compiler implemantation
+
+~NULL Vs UNINITIALIZED POINTER :
+    ~An uninitialized pointer contains undefined value
+    ~A null pointer stores a defined value, which is teh one decided by the environment to not be a valid memoryaddress for any object
+
+~NULL POINTER vs VOID POINTER:Null pointer is a value where as void pointer is a type
+
+Demonstration of Pointer in Null_Pointer.c
