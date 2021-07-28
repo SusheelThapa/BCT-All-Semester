@@ -16,8 +16,8 @@ int main()
 
     system("cls");
 
-    printf("Data is string two is ", strcpy(string_two, string_one));
-    
+    printf("Data is string two is %s.\n", strcpy(string_two, string_one));
+
     getch();
     return 0;
 }
