@@ -18,4 +18,10 @@ Source Code For [Lab 5](https://github.com/SusheelThapa/Code-With-C/tree/master/
 
 Source Code For [Lab 6](https://github.com/SusheelThapa/Code-With-C/tree/master/Computer%20Lab/Lab%206%20Source%20Code)
 
+Source Code For [Lab 7](https://github.com/SusheelThapa/Code-With-C/tree/master/Computer%20Lab/Lab%207%20Source%20Code)
+
+Source Code For [Lab 8](https://github.com/SusheelThapa/Code-With-C/tree/master/Computer%20Lab/Lab%208%20Source%20Code)
+
+Source Code For [Lab 9](https://github.com/SusheelThapa/Code-With-C/tree/master/Computer%20Lab/Lab%209%20Source%20Code)
+
 Other Lab Code will be uploaded as it will be done.
