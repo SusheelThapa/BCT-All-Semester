@@ -1,14 +1,19 @@
-/*Write a program find the sum of elements of an integers array of size 5 that are divisible by 10 not by 15*/
+/*
+Write a program find the sum of elements of an integers array of size 5 that are divisible by 10 not by 15
+*/
+
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
 
 int main()
 {
+    /*Variable declaration*/
     int i, num[3][3], sum = 0;
 
     system("cls");
 
+    /*Taking input from user*/
     printf("Enter the members of array:\n");
     for (int i = 0; i < 3; i++)
     {
@@ -18,6 +23,7 @@ int main()
         }
     }
 
+    /*Iterate over every element and check condtion is match or not. if match then it keep on adding those value*/
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
@@ -26,6 +32,7 @@ int main()
         }
     }
 
+    /*Prints the result*/
     printf("The sum of number present in the array divisible by 7 not by 5 is %d", sum);
 
     getch();

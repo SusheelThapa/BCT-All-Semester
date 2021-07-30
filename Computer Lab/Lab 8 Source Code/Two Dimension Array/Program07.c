@@ -6,6 +6,8 @@
 
 int powerOfNumber(int base, int power)
 {
+    "Raise the n power of number";
+
     int value = 1;
     for (int i = 1; i <= power; i++)
     {
@@ -16,11 +18,12 @@ int powerOfNumber(int base, int power)
 
 int main()
 {
+    /*Variable declaration*/
     int i, num[3][3];
 
     system("cls");
 
-    /*Input*/
+    /*Taking input from user*/
     printf("Enter the members of array: \n");
     for (int i = 0; i < 3; i++)
     {
@@ -30,7 +33,7 @@ int main()
         }
     }
 
-    /*Raising power*/
+    /*Raising power with function calll*/
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
@@ -39,7 +42,7 @@ int main()
         }
     }
 
-    /*New Array*/
+    /*Printing the new array formed*/
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)

@@ -1,3 +1,7 @@
+/*
+Type, run and observe the worl flow
+*/
+
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>

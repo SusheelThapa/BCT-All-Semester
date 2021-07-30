@@ -6,10 +6,12 @@
 
 int main()
 {
+    /*Variable Declaration*/
     int i, num[3][3], lowest, highest;
 
     system("cls");
 
+    /*Taking input from user*/
     printf("Enter the members of array: \n");
     for (int i = 0; i < 3; i++)
     {
@@ -19,9 +21,11 @@ int main()
         }
     }
 
+    /*Initialization of lowest and highest*/
     lowest = num[0][0];
     highest = num[0][0];
 
+    /*Iterate over every element and find the highest and lowest storing into a variable*/
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
@@ -31,6 +35,7 @@ int main()
         }
     }
 
+    /*Prints the result*/
     printf("\nHighest Number is %d", highest);
     printf("\n\nLowest Number is %d", lowest);
 

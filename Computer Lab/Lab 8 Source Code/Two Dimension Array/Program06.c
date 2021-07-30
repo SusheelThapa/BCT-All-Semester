@@ -9,6 +9,7 @@ int diagnolSum(int num[3][3])
 
     int sum = 0;
 
+    /*Iterate over every element and sum all the diagnol element i.e a(i,j) where i = j*/
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
@@ -16,16 +17,18 @@ int diagnolSum(int num[3][3])
             (i == j) ? (sum = sum + num[i][j]) : (sum = sum);
         }
     }
-    
+
     return sum;
 }
 
 int main()
 {
+    /*Variable declaration*/
     int i, num[3][3], lowest, highest;
 
     system("cls");
 
+    /*Takes input from user*/
     printf("Enter the members of array: \n");
     for (int i = 0; i < 3; i++)
     {
@@ -35,5 +38,6 @@ int main()
         }
     }
 
+    /*Call the function and prints its result*/
     printf("Sum of diagnol elements is %d", diagnolSum(num));
 }

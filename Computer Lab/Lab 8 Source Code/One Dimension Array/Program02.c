@@ -1,3 +1,7 @@
+/*
+Write,observe and study the following code
+*/
+
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>

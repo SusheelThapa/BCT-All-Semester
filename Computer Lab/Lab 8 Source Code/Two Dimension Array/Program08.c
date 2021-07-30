@@ -7,20 +7,21 @@
 
 int main()
 {
+    /*Declaration of variable*/
     float num[4][4];
 
     system("cls");
 
-    /*Raising power*/
+    /*Creating array from the condition given by the user*/
     for (int i = 0; i < 4; i++)
     {
         for (int j = 0; j < 4; j++)
         {
-            num[i][j] = pow(4,-1*(i+j+2));
+            num[i][j] = pow(4, -1 * (i + j + 2));
         }
     }
 
-    /*New Array*/
+    /*Printing the formed array*/
     for (int i = 0; i < 4; i++)
     {
         for (int j = 0; j < 4; j++)

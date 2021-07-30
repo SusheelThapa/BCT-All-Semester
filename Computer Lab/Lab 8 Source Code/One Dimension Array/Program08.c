@@ -6,6 +6,7 @@
 
 int armstrongArray(int num[])
 {
+    "Takes an array count the occurance of armstrong number and return it";
     int count = 0, armstrong = 0, n, rem;
 
     for (int i = 0; i < 5; i++)
@@ -37,17 +38,21 @@ int armstrongArray(int num[])
 
 int main()
 {
+    /*Declaration of variable*/
     unsigned int num[5];
+
     system("cls");
 
+    /*Taking input from user*/
     printf("Enter the members of array: ");
-
     for (int i = 0; i < 5; i++)
     {
         scanf("%d", &num[i]);
     }
 
+    /*Print the value of count of armstrong numbers in array afer function call*/
     printf("Count of armstrong number is %d", armstrongArray(num));
+
     getch();
     return 0;
 }

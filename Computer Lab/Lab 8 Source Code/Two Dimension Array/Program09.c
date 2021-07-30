@@ -6,18 +6,22 @@
 
 int main()
 {
+    /*Variable declaration*/
     int sum, numSum[10], num[10][10];
+
     system("cls");
 
+    /*Createa array with out own logic*/
     printf("Enter the members of array: ");
     for (int i = 0; i < 10; i++)
     {
         for (int j = 0; j < 10; j++)
         {
-            num[i][j] = (i) * 10 + (j);
+            num[i][j] = (i)*10 + (j);
         }
     }
 
+    /*Calculating the sum of element of row and storing it in a one d array*/
     for (int i = 0; i < 10; i++)
     {
         sum = 0;
@@ -28,7 +32,8 @@ int main()
         numSum[i] = sum;
     }
 
-    printf("Two Array: \n");
+    /*Printing the two d array*/
+    printf("Two D Array: \n");
     for (int i = 0; i < 10; i++)
     {
         for (int j = 0; j < 10; j++)
@@ -38,6 +43,7 @@ int main()
         printf("\n");
     }
 
+    /*Printing the one d array which contain sum of elements of row*/
     printf("\nSum Array: \n");
     for (int i = 0; i < 10; i++)
     {
