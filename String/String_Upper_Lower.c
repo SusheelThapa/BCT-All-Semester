@@ -6,13 +6,35 @@ WAP to convert lower case character to upper case and vice verse in a string ent
 #include <conio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <string.h>
+
+void lowerCase(char *string)
+{
+    int i = 0;
+    while (*(string + i) != '\0')
+    {
+        *(string + i) = tolower(*(string + i));
+        i++;
+    }
+    *(string + i) = '\0';
+}
+
+void upperCase(char string[])
+{
+    int i = 0;
+    while (string[i] != '\0')
+    {
+        string[i] = toupper(string[i]);
+        i++;
+    }
+    string[i] = '\0';
+}
 
 int main()
 {
     /*Declaration of variable*/
     char string[100], upper_string[100], lower_string[100];
     int i = 0, word_count = 1;
-    ;
 
     system("cls");
 
@@ -21,21 +43,21 @@ int main()
     gets(string);
 
     /*Convert to lower and upper case*/
-    i = 0;
-    while (string[i] != '\0')
+    upperCase(string);
+    strcpy(upper_string, string);
+    lowerCase(string);
+    strcpy(lower_string, string);
+
+    /*Counting words*/
+    i = 1;
+    while (string[i - 1] != '\0')
     {
-        upper_string[i] = toupper(string[i]);
-        lower_string[i] = tolower(string[i]);
-        if (string[i] == ' ')
+        if (string[i - 1] != ' ' && string[i] == ' ')
         {
             word_count++;
         }
         i++;
     }
-
-    /*Adding null character*/
-    upper_string[i] = '\0';
-    lower_string[i] = '\0';
 
     i = 0;
 
