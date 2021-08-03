@@ -21,7 +21,7 @@ void reverse(char string[], int length)
         /*Recursive termination condition*/
         if (length == length_of_string / 2)
         {
-            goto stop;
+            return;
         }
         else
         {
@@ -45,7 +45,8 @@ void reverse(char string[], int length)
         /*Terminating condition*/
         if (length == midpoint)
         {
-            goto stop;
+            // goto stop;
+            return;
         }
         else
         {
@@ -61,8 +62,6 @@ void reverse(char string[], int length)
             reverse(string, length);
         }
     }
-/*Label to program come if termination condition is acheived so that recursive function is terminated*/
-stop:;
 }
 
 int main()
