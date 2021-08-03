@@ -1,9 +1,0 @@
-                             1                           Ram                       Chitwan     9800000000
-                             2                         Shyam                       Lamjung     9811111111
-                             3                          Hari                     Nepaljung     9822222222
-                             4                         Geeta                       Hetauda     9833333333
-                             5                          Sita                     Kathmandu     9844444444
-                             6                        Balram                    Sagarmatha     9855555555
-                             7                       Hanuman                        Parbat     9866666666
-                             8                    EarthQuake                         Nepal     9877777777
-                             9                        Laxman                         Jhapa     9888888888
