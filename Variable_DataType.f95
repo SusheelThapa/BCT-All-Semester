@@ -9,9 +9,9 @@ program Variable_DataTypes
     x = 500
     i = 4.98
 
-    Print*, 'x' ,x
-    Print*, 'i' ,i
-    Print*, 'c' ,c
+    Print *, 'x', x
+    Print *, 'i', i
+    Print *, 'c', c
 
     ! Comment start with '!' in fortran
 

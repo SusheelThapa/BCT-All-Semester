@@ -5,10 +5,10 @@ program Take_Input
 
     !We use read () to take value from user
     !Syntax:
-        !read(*,*),<variable name>
+    !read(*,*),<variable name>
 
-    WRITE(*,*)"Enter any number?"
-    READ(*,*) number
-    print*,"The inputted number is ", number
+    WRITE (*, *) "Enter any number?"
+    READ (*, *) number
+    print *, "The inputted number is ", number
 
 end program Take_Input

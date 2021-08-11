@@ -1,35 +1,35 @@
-!decision control using if 
+!decision control using if
 program name
     implicit none
-    INTEGER :: a ,b
+    INTEGER :: a, b
     ! Syntax:
-        ! if(condition) then
-            ! statement
-            ! statement
-            ! statement
-            !.
-            !.
-            !.
-        !else   
-            !statement
-            !statement
-            !statement
-            !.
-            !.
-            !.
-        !endif
+    ! if(condition) then
+    ! statement
+    ! statement
+    ! statement
+    !.
+    !.
+    !.
+    !else
+    !statement
+    !statement
+    !statement
+    !.
+    !.
+    !.
+    !endif
 
-    if(.true.) then 
-        print*, "It is true statement"
-    endif
+    if (.true.) then
+        print *, "It is true statement"
+    end if
 
     a = 5
-    b = 4 
+    b = 4
 
-    if(a.gt.b) then 
-        print*, "a is greater than b"
+    if (a .gt. b) then
+        print *, "a is greater than b"
     else
-        print * ,"a is less than b"
-    endif
+        print *, "a is less than b"
+    end if
 
 end program name
