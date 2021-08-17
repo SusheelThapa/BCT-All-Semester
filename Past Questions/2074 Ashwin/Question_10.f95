@@ -1,0 +1,12 @@
+
+PROGRAM SUSHEEL
+    REAL :: PIE = 0, START = 1
+
+    DO I = 1, 2500
+        PIE = START*1/(2*I - 1) + PIE
+        START = -1*START
+    END DO
+
+    PRINT *, 4*PIE
+
+END PROGRAM SUSHEEL
