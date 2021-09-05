@@ -25,7 +25,6 @@ for item in cwd_files_folders:
     os.system("cls")
     if item.endswith(".exe"):
         print(f"{item} is executing.")
-        time.sleep(2)
 
         os.system(f".\\{item}")
 

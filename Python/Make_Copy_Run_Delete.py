@@ -31,7 +31,6 @@ for item in cwd_files_folders:
         os.system("cls")
 
         print(f"Copying the code of {item}...\n")
-        time.sleep(2)
         with open(item, "r") as f:
             pyperclip.copy(f.read())
 
@@ -44,7 +43,6 @@ for item in cwd_files_folders:
         os.system("cls")
 
         print(f"Compilation and Execution of {item}\n")
-        time.sleep(2)
         os.system(
             f'gcc {item} -o {item.replace(".c","")}')
         os.system(f'.\\{item.replace(".c",".exe")}')
@@ -58,7 +56,6 @@ for item in cwd_files_folders:
         os.system("cls")
 
         print(f"Deleting the created {item}.exe file..\n")
-        time.sleep(2)
         os.system(f'del {item.replace(".c",".exe")}')
 
         print(f"{item.replace('.c', '.exe')} is deleted...")
