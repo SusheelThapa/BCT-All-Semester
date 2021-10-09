@@ -1,0 +1,21 @@
+C++ DATA TYPES  
+Data types define the type of data a variable can hold.
+For example, int can store only integer data type.
+
+TYPES OF DATA TYPES
+->Built-in data type
+    int
+    float
+    char 
+    double
+    bool
+
+->User-Defined data type
+    struct
+    union
+    Enum
+
+->Derived data type
+    Array
+    Function
+    Pointer 
