@@ -1,0 +1,10 @@
+CONSTANT
+A constant value is an explicit number or character that doesn't change.
+
+DECLARATION
+A variabe can be declare as constant with keyword 'const'
+For eg:
+    const int a = 9;
+
+    A constant must be intialized with a value when it is decalred and its value cannot be change by any futher statements.
+    By convention, Constant name are generally UPPERCASE but it isn't compulsary.
