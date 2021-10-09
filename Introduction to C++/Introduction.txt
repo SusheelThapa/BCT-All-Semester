@@ -1,0 +1,14 @@
+C++ is a general-purpose programming language created by Bjarne Stroustrup in 1979
+
+Why C++?
+--> It is object- oriented
+--> It is low-level standard programming language.
+--> It is just extension to C
+--> It generate fast and efficient program.
+--> It gives more control over  system resources and memory management
+--> It had high performance
+
+MAJOR UPDATE DONE IN 
+2011 --> C++11
+2014 --> C++14
+2017 --> C++17
