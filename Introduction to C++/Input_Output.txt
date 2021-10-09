@@ -1,0 +1,10 @@
+BASIC INPUT/OUTPUT IN C++
+->C++ comes with libraries which helps us in performing input/ouput.
+->Sequence of bytes correspoding to input and output are commonly known as streams.
+
+    INPUT STREAM 
+    Direction of flow of bytes takes place from input device to main memory.
+
+    OUTPUT STREAM
+    Direction of flow of bytes takes place from main memory to the output device.
+
