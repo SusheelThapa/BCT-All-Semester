@@ -1,0 +1,33 @@
+EXPLANATION OF "Hello_World.cpp"
+
+#include <iostream>
+
+--> There is a file name "iostream "in your computer that is needed to run the program so it will import that files from the computer.
+
+
+int main()
+
+--> "int" mean integer.
+--> "main" is the entry point of execution of program.
+--> () is used to say that it is funtion. And here, main is entry point function. 
+
+
+{
+--> Inside {} we write C++ statement.
+
+
+    std::cout << "Hello World";
+
+    --> std is standard namespace
+    --> :: is scope resolution operator
+    --> cout is a function that is in 'iostream' which we have included in first line
+    --> Above line tells computer to print "Hello World" on the computer screen.
+    --> ; tells that our C++ statement has completed.
+
+
+    return 0;
+
+    --> Before main we have use int, so when all statement of main has completed then it should return some int value. In this case, we have return 0 as int value.
+
+}
+--> Closing Parenthess
