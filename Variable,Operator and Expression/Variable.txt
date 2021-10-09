@@ -1,0 +1,38 @@
+VARIABLE
+-->Container to store data
+
+    Just like we use jar to store water, drum for rice, etc. Same like that we have different variable(container) to store different types of data.
+
+
+
+TYPES OF VARIABLE
+    ->int:: To store integer
+    ->float:: To store decimal point number
+    ->char:: To store a charcter
+    ->double:: To store decimal point number with larger number after decimal
+    ->boolean:: To store either True or False
+
+
+On the basis of scope of variable, 
+    Local Variable
+        These are declared inside the braces of any function and can be accessed only gfrom there
+    Global Variable
+        These are declared outside any function and can be accessed from anywhere
+
+Note: Both global and local variable can have same name.But local variable will have preccedance over global variable.
+
+
+
+SYNTAX FOR DECLARING VARIABLE
+    data_type Variable_name = value;
+    int a = 4,v=7;
+
+
+
+RULES FOR DECLARE VARIABLE IN C++
+->Varible names in C++ can range form 1 to 255 characters.
+->ALl variable name must begin with a letter of the alphabet or an underscore(_).
+->After the first intial letter, variable name can also contain letters and numbers.
+->Variable names are case-sensitive
+->No space or special characters are allowed.
+->You cannot use C++ reserved keyword as variable name.
