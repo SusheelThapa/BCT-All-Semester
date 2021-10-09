@@ -1,0 +1,18 @@
+COMMENTS
+--> Are those line that are for the programmer so that it provide some information.
+--> This line for neglacted by complier.
+
+Single Line Comments
+--> Starts With '//'
+
+    // This is single line comment.
+
+Multi Line Comments
+--> Written line /*..........*/
+
+    /*
+        This 
+        is multi 
+        Line 
+        Comments
+    */
