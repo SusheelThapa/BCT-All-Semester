@@ -1,0 +1,5 @@
+Manipulator
+These are those words that has effect in Display of the text
+    endl = just create a newline
+
+Note: Manipulator are present in "iomanip" header files
