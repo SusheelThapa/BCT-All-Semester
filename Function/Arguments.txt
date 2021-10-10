@@ -1,0 +1,13 @@
+Acutal Parameters:
+Value that are used to call the function are call Acutal Parameter.
+
+Formal Parameters
+Value that are used to recieve the value that are called using function call are called Formal Parameter.
+
+Default Parameters
+Value that will use default value specified inside function if value isn't passed are called Default Parameter.
+
+Constant Parameter:
+Value whose are initialized using const keyword inside function are Constant Parameter.
+
+Check "Arguments.cpp" to understand its implementation in C++
