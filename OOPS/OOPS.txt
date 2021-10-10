@@ -1,0 +1,41 @@
+OBJECT ORIENTED PROGRAMMING(OOPS)
+->Works on the concept of classes and objects
+->A class is a template to create objects
+->Treats data as a critical element
+->Decomposes the problem in objects and builds data and functions around the objects
+
+
+
+WHY OOPS?
+->C++ language was designed with the main intention of adding object-oriented features to C language.
+->As the size of program increase, readability, maintainability and bug-free nature of program decrease.
+->This was the problem with language like C which relied upon functions or procedure
+->As a result, the possibility of not addressing the problem in an effective manner as high
+->Also, as data was almost neglected, data security was easily compromised
+->Using classes solves this problem by modeling program as real world scenario
+
+
+
+TERMS IN OOPS
+Class: Basics template for creating objects.
+
+Objects: Basic run time entities
+
+Data Abstraction & Encapsulation: Wrapping data and functions into single unit
+
+Inheritance: Properties of one class can be inherited into others
+
+Polymorphism: ability to take more than one forms.
+
+Dynamic Binding: code which will execute is not known until the program runs
+
+Message Passing: Object.messsage(Information) call format
+
+ADVANTAGE OF OOPS
+->Code readability.
+
+->Principle of data hiding helps build secure systems.
+
+->Multiple object can co-exist without any interference.
+
+->Software complexity can be easily managed.
