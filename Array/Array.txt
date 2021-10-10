@@ -1,0 +1,13 @@
+Array
+An array is collection of items of similar types stored in contigous memory locations.
+
+
+
+Why Array?
+Sometimes, a simple variable is not enough to hold all the data.
+
+For example,
+
+    we want to store the marks of 2500 student haveing 2500 different variable for this task will not be feasible
+    
+    To solve this problem, we can define an array with size 2500 that can hold the marks of all students.
