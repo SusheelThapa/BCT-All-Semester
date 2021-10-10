@@ -29,6 +29,12 @@ int main()
 
             CTRL + /
     */
-   
+
+    //Local varible with same name as global variable
+    int age = 90;
+
+    //Printing Local and global variable with same name
+    cout << "Local Variable age : " << age << endl;
+    cout << "Global Variable age : " << ::age << endl; //:: -> is scope resolution operator
     return 0;
 }
