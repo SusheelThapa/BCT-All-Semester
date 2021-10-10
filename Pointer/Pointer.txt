@@ -1,0 +1,20 @@
+Pointer:
+It is a data type which holds the address of other data types
+    For eg:
+        int a = 9;
+
+        Let a be store in address "9823"
+
+        Let pointer variable be b:
+        The b will store the value 9823 which is address of a(integer variable)
+    
+
+Declaration of Pointer: 
+    data_type * variable_name ;
+    variable_name = address of variable
+    
+    Eg:
+
+        int a =6;
+        int * b;
+        b = &a;
