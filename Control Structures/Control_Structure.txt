@@ -1,0 +1,6 @@
+Control Structure
+It helps to control the flow of instruction
+
+    ->Sequential Control Structure
+    ->Selective Control Structure
+    ->Loop Control Structure
