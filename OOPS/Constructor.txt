@@ -1,0 +1,14 @@
+Constructor
+It is a special member function with same name as that of class and used to initialized object of class
+
+Properties of Constructor
+
+->It should be declared in public section of class.
+
+->They are automatically invoked whenever the object is created
+
+->They don't have return type
+
+->It can have default arguments.
+
+->We cannot refer to the address
