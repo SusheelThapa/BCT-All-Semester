@@ -1,0 +1,4 @@
+Memory Allocation in Classs
+-> For common items in between different object of class memory is allocated for only one time. For eg: function 
+
+-> For different items in between object of same class memory is allocated for individual object. For eg. variable
