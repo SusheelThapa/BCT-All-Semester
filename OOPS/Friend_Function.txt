@@ -1,0 +1,16 @@
+Friend Functions
+Function that is declared outside the class and able to access private data of class with the help of object of class is called Friend Function
+
+
+Properties of Friend Functions
+->Not in the scope of class(not the part of class)
+
+->Since, it isn't in the scope of class it cannot be called from the object of class
+
+->Can be invoked without the help of any object
+
+->Usually contains as object as arguments 
+
+->Can be declared inside public or private section of the class
+
+->It cannot access the members directly by their names and need object_name.member_name to access any member. 
