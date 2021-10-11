@@ -1,0 +1,32 @@
+INHERITANCE IN C++
+
+->Concept of reusbility in C++ is supported by inheritance.
+
+->We can reuse the properties of an existing class
+
+->The existing class is called as the base class
+
+->The new class which is inherited is called as the Derived class
+
+->Reusing classes saves time and money
+
+->There are different types of inheritance in C++
+
+
+TYPES OF INHERITANCE
+->Single inheritance
+    A derived class with only one Base class
+
+->Multiple inheritance
+    A derived class with more than one Base class
+
+->Hierarchical inheritance
+    Several derived class from single class
+
+->Multilevel inheritance
+    Deriving a class from already derived class
+
+->Hybrid inheritance
+    A combination of multiple inheritance and mulitlevel inheritance
+    A class is derived from two clases as in multiple inheritance 
+    However, one of the parent classesis not base class
