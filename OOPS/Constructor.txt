@@ -1,6 +1,8 @@
 Constructor
 It is a special member function with same name as that of class and used to initialized object of class
 
+
+
 Properties of Constructor
 
 ->It should be declared in public section of class.
@@ -12,3 +14,44 @@ Properties of Constructor
 ->It can have default arguments.
 
 ->We cannot refer to the address
+
+
+
+Constructor in Derived class
+
+->We can use Constructor in derived classes in C++.
+
+->If base class constructor doesn't have any arguments, there is no need of any constructor in derived class
+
+->But if there are one or more arguments in the base class constructor, derived class need to pass arguments to the base class constructor 
+
+->If both base and derived classes have constructor, base class constructor is executed first.
+
+
+
+Constructor in Multiple/multilevel Inheritance
+
+->In multiple inheritance, base classses are constucted in the order in which they appear in the class declaration
+
+->In multilevel inheritance, the constructors are executed in the order of inheritance.
+
+
+
+Special Syntax
+
+
+->C++ supports an special syntax for passing argumetns to multiple base classses
+
+->The constructor of the derived class receives all the argumetns at once and then will pass the calls to the respective base classes.
+
+->The body is called after all the constructor are finished executing
+
+
+
+Special Case in Vitual Base class
+
+->The constructor for vitrual base classes are invoked before any non-virutal base class
+
+->If there are multiple virtual base classes, they are invoked in the order declared.
+
+->Any non-virtual base class are then constructed before the derived class constructor is executed
