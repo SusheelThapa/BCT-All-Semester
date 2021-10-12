@@ -1,0 +1,18 @@
+Polymorphism:
+
+Having more than one form(same name) is called polymorphism
+
+Eg: Function OverLoading
+    Operator Overloading
+    Virtual Functions
+
+
+
+Types of Polymorphism
+
+->Run Time Polymorphism
+    Virtual Functions
+    
+->Compile Time Polymorphism
+    Function Overloading
+    Operator OverLoading
