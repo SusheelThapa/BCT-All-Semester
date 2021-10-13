@@ -1,0 +1,57 @@
+Standard Template Library(STL)
+As, its name suggest it is library of Template i.e generic classes and functions.
+
+
+Why use STL?
+->Reuse: Well tested components
+->Time saving
+
+
+
+Components of STL
+->Containers
+    It is an object to store data.
+    It uses template classes
+
+    For eg: vector,set, map, stack,etc
+
+    Types:
+    =>Sequence Containers
+        Store data in Linear Fashion
+
+        Eg:Vector, List, Dequeue,etc
+
+        ~>Vector    
+            Random Access fast
+            Middle Insertion/Deletion is fast
+            End Insertion/Deletion is fast
+
+        ~>List
+            Random Access is slow
+            Middle Insertion/Deletion is fast as compared to array
+            End Insertion/Deletion is fast
+ 
+    =>Associative containers
+        Direct access to data
+
+        Eg:Set/Multiset, Map/Mulitmap, etc
+
+        All operations are fast except random access.
+
+    =>Derived Containers
+        It provide better real world modelling
+
+        Eg:Stack, Queue, Priority-queue,etc
+
+
+->Algorithms
+    It is set of procedure use to manipulate data to reach to a particular solution.In short, procedure to process data
+    It uses template functions
+
+    For eg: Searching Algorihthm, Sorting Algorithm,etc
+
+
+->Iterators
+    It is an object points to an element in a containers
+    It is like pointer but is a object and handle just like pointer.
+    It connnect algorithm with containers
