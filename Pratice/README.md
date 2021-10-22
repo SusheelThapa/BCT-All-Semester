@@ -239,4 +239,70 @@
  
   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [Solution](Function13.cpp)
 
-___
+---
+
+## Arrays
+
+01. Given an array a[] of size n. **For every i from 0 to n-1 output max (a[0],a[1],......, a[i])**
+
+  >
+
+          0  1  2  3  4   --Index
+          8 -3 15  9 45   -- Array Element
+
+          Max value upto 0th index of array is 8
+          Max value upto 1th index of array is 8
+          Max value upto 2th index of array is 15
+          Max value upto 3th index of array is 15
+          
+
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [Solution](Array01.cpp)
+
+    
+
+02. Given an array a[] of size n. **Output sum of each subarray of the given array**.
+  
+
+    > 
+         Array:
+                    1   2   2  
+
+        Sub Array:
+                    1     1 2     1 2 2     2     2 2     2
+        Sum:        1      3        5       2       4     2
+      
+
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [Solution](Array02.cpp)
+
+03. <p>
+      An arithmetic array is an array that contains at least two integers least two integers and the differences between consecutive integers are equal. For example, [9,10] ,[3,3,3] and [9,7,5,3] are arithmetic arrays,while [1,3,3,7],[2,1,1] and [1,2,4] are not arithmetic arrays.
+
+      Sarasvati has an array of <string>N</strong> non-negative integers. The i-th integers of the array is Ai. She wants to choose a contiguous arithmetic subarray from her array that has the maximum length. Please help her to determine the length of longest contigous arithmetic subarray
+    </p>
+
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[Solution](Array03.cpp)
+
+04. <p>
+      Isyana is given the number of vistors at her lcoal theme park on N consecutive days. The number of visitors on the i-th day is Vi.A day is <strong>record breaking</strong> if it satisfies both of the following conditions:
+
+      - The number of visitors on the day is strictly larger than the number of visitors on each of the previous days.
+
+      - Either it is the last day, or the number of visitor on the day is strictly larger than the number of visitors on the following day.
+      Note that the very first day could be record-breaking day!
+
+      Please help Isyana find out the number of record-breaking days.
+
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [Solution](Array04.cpp)
+
+05. <p>
+      Given an array arr[] of size <string>N</strong>. The task is to find the first repeating element in the array of integers, i.e, an element that occurs more than once and whose index of first occurance is smallest.
+    </p>
+
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [Solution](Array05.cpp)
+
+06. Given an unsorted array **A** of size of non-negative integers, find the continous subarray which adds to a given number S.
+
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [Solution](Array06.cpp)
+
+
+
