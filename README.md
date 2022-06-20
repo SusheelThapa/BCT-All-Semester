@@ -4,4 +4,5 @@
 
 - [Lab One](Lab%20One/)
 - [Lab Two](Lab%20Two/)
-- [Lab Two](Lab%20Three/)
+- [Lab Three](Lab%20Three/)
+- [Lab Four](Lab%20Four/)
