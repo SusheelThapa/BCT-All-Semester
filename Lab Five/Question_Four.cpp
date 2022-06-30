@@ -8,27 +8,27 @@ The prefix and postfix operators in the Date class should behave exactly like th
 
 #include <iostream>
 
+int day_month_in_year[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
 class Date
 {
-    int year, total_days;
+    int year;
+    int month;
+    int day;
+
     bool isLeapYear()
     {
-        if (this->year % 400)
+        if (year % 4 == 0 && !(year % 100 == 0) && year % 400 == 0)
         {
-            return true;
+            if (year % 100 == 0)
+            {
+                if (year % 400 == 0)
+                    return true;
+            }
+            else
+                return true;
         }
-        else if (this->year % 100)
-        {
-            return false;
-        }
-        else if (this->year % 4 == 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return false;
     }
 
 public:
@@ -36,55 +36,93 @@ public:
     {
 
         this->year = year;
-
-        total_days = (month - 1) * 30 + day;
+        this->month = month;
+        this->day = day;
     }
 
     void printDate()
     {
-        int month = (((total_days / 30 + 1) < 12) ? (total_days / 30 + 1)
-                                                  : (12));
-        // if (isLeapYear())
-        {
-            std::cout << month << "/" << total_days - (month - 1) * 30 << "/" << year << "\n";
-        }
+
+        std::cout << month << "/" << day << "/" << year << "\n";
     }
 
-    void operator++()
+    /*Prefix*/
+    Date operator++()
     {
-        this->total_days += 1;
+        int total_days_in_month = day_month_in_year[month - 1];
 
-        if (total_days > 361 && isLeapYear())
+        if (isLeapYear() && month == 2)
         {
-            total_days = 0;
-            this->year += 1;
+            if (this->day == 29)
+            {
+                month++;
+                this->day = 1;
+            }
+            else
+            {
+                this->day++;
+            };
+
+            return *this;
         }
-        else if (total_days > 360 && !isLeapYear())
+
+        if (this->day + 1 > total_days_in_month)
         {
-            total_days = 0;
-            this->year += 1;
+            this->day = 1;
+            month++;
         }
+        else
+        {
+            this->day++;
+        }
+
+        if (month > 12)
+        {
+            month = 1;
+            year++;
+        }
+
+        return *this;
     }
-    void operator++(int)
+    /*Post fix*/
+    Date operator++(int)
     {
-        this->total_days += 1;
+        Date return_date = *this;
 
-        if (total_days > 361 && isLeapYear())
+        int total_days_in_month = day_month_in_year[month - 1];
+
+        if (isLeapYear() && day == 28 && month == 2)
         {
-            total_days = 0;
-            this->year += 1;
+            this->day++;
+            return return_date;
         }
-        else if (total_days > 360 && !isLeapYear())
+
+        if (this->day + 1 > total_days_in_month)
         {
-            total_days = 0;
-            this->year += 1;
+            this->day = 1;
+            month++;
         }
+        else
+        {
+            this->day++;
+        }
+
+        if (month > 12)
+        {
+            month = 1;
+            year++;
+        }
+        return return_date;
     }
 };
 
 int main(int argc, char const *argv[])
 {
-    Date d1(12, 29, 2000);
+    Date d1(2, 27, 2000);
+
+    d1.printDate();
+
+    ++d1;
 
     d1.printDate();
 
@@ -99,5 +137,6 @@ int main(int argc, char const *argv[])
     d1++;
 
     d1.printDate();
+
     return 0;
 }
