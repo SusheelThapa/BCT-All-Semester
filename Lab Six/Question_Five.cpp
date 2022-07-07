@@ -64,7 +64,7 @@ public:
         return *this;
     }
 
-    friend DerivedClass subtract(DerivedClass d);
+    friend class DerivedSubtract;
 
     void displayDerivedClass()
     {
@@ -77,20 +77,24 @@ public:
     }
 };
 
-DerivedClass subtract(DerivedClass d)
+class DerivedSubtract
 {
+public:
+    DerivedClass subtract(DerivedClass d)
+    {
 
-    d.real -= d.BaseClass::getReal();
-    d.imaginary -= d.BaseClass::getImaginary();
+        d.real -= d.BaseClass::getReal();
+        d.imaginary -= d.BaseClass::getImaginary();
 
-    return d;
-}
+        return d;
+    }
+};
 
 int main(int argc, char const *argv[])
 {
     (DerivedClass(2, 3).addComplexNumber()).displayDerivedClass();
 
-    subtract(DerivedClass(2, 4)).displayDerivedClass();
+    DerivedSubtract().subtract(DerivedClass(2, 4)).displayDerivedClass();
 
     return 0;
 }
