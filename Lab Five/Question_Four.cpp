@@ -18,7 +18,7 @@ class Date
 
     bool isLeapYear()
     {
-        if (year % 4 == 0 && !(year % 100 == 0) && year % 400 == 0)
+        if (year % 4 == 0)
         {
             if (year % 100 == 0)
             {
@@ -88,30 +88,7 @@ public:
     Date operator++(int)
     {
         Date return_date = *this;
-
-        int total_days_in_month = day_month_in_year[month - 1];
-
-        if (isLeapYear() && day == 28 && month == 2)
-        {
-            this->day++;
-            return return_date;
-        }
-
-        if (this->day + 1 > total_days_in_month)
-        {
-            this->day = 1;
-            month++;
-        }
-        else
-        {
-            this->day++;
-        }
-
-        if (month > 12)
-        {
-            month = 1;
-            year++;
-        }
+        this->operator++();
         return return_date;
     }
 };
