@@ -7,3 +7,5 @@
 - [Lab Three](Lab%20Three/)
 - [Lab Four](Lab%20Four/)
 - [Lab Five](Lab%20Five/)
+- [Lab Six](Lab%20Six/)
+- [Lab Seven](Lab%20Seven/)
