@@ -9,3 +9,7 @@
 - [Lab Five](Lab%20Five/)
 - [Lab Six](Lab%20Six/)
 - [Lab Seven](Lab%20Seven/)
+
+## List of Assignments
+
+- [Assignment](Assignment)
