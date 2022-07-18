@@ -7,13 +7,13 @@ private:
 
 public:
     Int(){};
-    Int(int value) { this->a = value; }
+	Int(int value){this->a = value; }
 
-    Int &operator=(int value)
+    Int &operator=(Int value)
     {
 
         std::cout << "Overloading = operator\n";
-        this->a = value;
+        this->a = value.a;
         return *this;
     }
 };
@@ -21,7 +21,7 @@ public:
 int main(int argc, char const *argv[])
 {
     Int a;
-    a = 5;
+    a = Int(5);
 
     return 0;
 }
