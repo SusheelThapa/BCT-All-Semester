@@ -7,11 +7,10 @@ Medicine and Science from base class Student.Create the objects of the derived c
 */
 
 #include <iostream>
-
 class Student
 {
 public:
-    void display()
+    virtual void display()
     {
         std::cout << "Student class";
     }
