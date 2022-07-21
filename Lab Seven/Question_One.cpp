@@ -14,8 +14,8 @@ class Shape
 public:
     virtual ~Shape() { std::cout << "Destructor of Shape class.\n"; }
 
-    virtual float area() { return 0; }
-    virtual void display() {}
+    virtual float area() = 0;
+    virtual void display() = 0;
 };
 
 class Rectangle : public Shape
