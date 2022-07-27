@@ -12,8 +12,10 @@ class Complex
     float real, imaginary;
 
 public:
+    Complex(){};
     Complex(float r, float i) : real(r), imaginary(i){};
 
+    friend std::istream &operator>>(std::istream &in, Complex &c);
     friend std::ostream &operator<<(std::ostream &out, const Complex &c);
 };
 
@@ -23,9 +25,20 @@ std::ostream &operator<<(std::ostream &out, const Complex &c)
         << std::flush;
     return out;
 }
+std::istream &operator>>(std::istream &in, Complex &c)
+{
+    std::cout << "Real part: ";
+    std::cin >> c.real;
+    std::cout << "Imaginary part:";
+    std::cin >> c.imaginary;
+    return in;
+}
 
 int main(int argc, char const *argv[])
 {
-    std::cout << "Complex Number: " << Complex(1, 2);
+    Complex c;
+
+    std::cin >> c;
+    std::cout << "Complex Number: " << c;
     return 0;
 }
