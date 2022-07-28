@@ -9,7 +9,10 @@
 - [Lab Five](Lab%20Five/)
 - [Lab Six](Lab%20Six/)
 - [Lab Seven](Lab%20Seven/)
+- [Lab Eight](Lab%20Eight/)
 
 ## List of Assignments
 
 - [Assignment](Assignment)
+  - [Operator Overloading](/Assignment/Operator%20Overloading/)
+  - [Type Conversion](/Assignment/Type%20Conversion/)
