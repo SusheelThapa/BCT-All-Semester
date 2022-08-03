@@ -10,6 +10,7 @@
 - [Lab Six](Lab%20Six/)
 - [Lab Seven](Lab%20Seven/)
 - [Lab Eight](Lab%20Eight/)
+- [Lab Nine](Lab%20Nine/)
 
 ## List of Assignments
 
