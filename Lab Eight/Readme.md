@@ -211,78 +211,80 @@ the account information (account-number, last-name, first-name, total-balance).*
 
 _This program works only in Linux because i have used some of the terminal command of linux. If you want to run it in window then you must replace those linux command with equivalent command in window._
 
-```c++
-
+```C++
 #include <iostream>
 #include <string>
 #include <fstream>
 #include <iomanip>
 
-#define STUDENT_RECORD_FILE "student_record.bin"
+#define TRANSACTION_RECORD_FILE "transaction_record.bin"
 
-class Student
+class Transaction
 {
 
 public:
-    std::string name;
-    std::string department;
-    std::string roll_number;
+    std::string first_name;
+    std::string last_name;
+    std::string account_number;
+    std::string total_balance;
 
-    Student(){};
+    Transaction(){};
 
-    void readStudentData()
+    void readTransactionData()
     {
-        std::cout << "Student Name : ";
-        std::cin >> this->name;
-        std::cout << "Department : ";
-        std::cin >> this->department;
-        std::cout << "Roll number: ";
-        std::cin >> this->roll_number;
+        std::cout << "First Name : ";
+        std::cin >> this->first_name;
+        std::cout << "Last Name : ";
+        std::cin >> this->last_name;
+        std::cout << "Account Number : ";
+        std::cin >> this->account_number;
+        std::cout << "Total Balance: ";
+        std::cin >> this->total_balance;
     }
 };
 
-class StudentRecord
+class TransactionRecord
 {
-    Student student;
-    int total_students;
-    std::fstream student_record_file;
+    Transaction transaction;
+    int total_transactions;
+    std::fstream transaction_record_file;
 
 private:
     bool openFile(std::string mode)
     {
         if (mode == "append")
         {
-            student_record_file.open(STUDENT_RECORD_FILE, std::ios::app | std::ios::binary);
+            transaction_record_file.open(TRANSACTION_RECORD_FILE, std::ios::app | std::ios::binary);
         }
         else if (mode == "read")
         {
-            student_record_file.open(STUDENT_RECORD_FILE, std::ios::in | std::ios::binary);
+            transaction_record_file.open(TRANSACTION_RECORD_FILE, std::ios::in | std::ios::binary);
         }
         else if (mode == "read+append")
         {
-            student_record_file.open(STUDENT_RECORD_FILE, std::ios::in | std::ios::app | std::ios::binary);
+            transaction_record_file.open(TRANSACTION_RECORD_FILE, std::ios::in | std::ios::app | std::ios::binary);
         }
-        return student_record_file.is_open();
+        return transaction_record_file.is_open();
     }
 
     void closeFile()
     {
-        student_record_file.close();
+        transaction_record_file.close();
     }
 
 public:
-    StudentRecord()
+    TransactionRecord()
     {
-        total_students = 0;
+        total_transactions = 0;
     }
 
-    void addStudent()
+    void addTransaction()
     {
-        student.readStudentData();
+        transaction.readTransactionData();
 
         if (this->openFile("append"))
         {
-            student_record_file.write(reinterpret_cast<char *>(&student), sizeof(student));
+            transaction_record_file.write(reinterpret_cast<char *>(&transaction), sizeof(transaction));
         }
         else
         {
@@ -290,116 +292,119 @@ public:
         }
         this->closeFile();
 
-        this->total_students += 1;
+        this->total_transactions += 1;
     }
 
-    void updateStudent()
+    void updateTransaction()
     {
 
-        std::string roll_number_to_update;
+        std::string account_number_to_update;
 
-        std::cout << "Enter the Roll number of the Record you want to update?\n";
+        std::cout << "Enter the account of the Record you want to update?\n";
         std::cout << "-->";
-        std::cin >> roll_number_to_update;
+        std::cin >> account_number_to_update;
 
         if (this->openFile("read+append"))
         {
             int i = 0;
 
-            std::fstream temp_student_record;
+            std::fstream temp_transaction_record;
 
-            temp_student_record.open("student_record_temp.bin", std::ios::out | std::ios::binary);
+            temp_transaction_record.open("transaction_record_temp.bin", std::ios::out | std::ios::binary);
 
-            while ((i++) < this->total_students)
+            while ((i++) < this->total_transactions)
             {
-                student_record_file.read(reinterpret_cast<char *>(&student), sizeof(student));
+                transaction_record_file.read(reinterpret_cast<char *>(&transaction), sizeof(transaction));
 
-                if (student.roll_number == roll_number_to_update)
+                if (transaction.account_number == account_number_to_update)
                 {
-                    std::cout << "Student Name: " << student.name << std::endl;
-                    std::cout << "Department Name: " << student.department << std::endl;
-                    std::cout << "Roll number: " << student.roll_number << std::endl;
+                    std::cout << "First Name: " << transaction.first_name << std::endl;
+                    std::cout << "Last Name: " << transaction.last_name << std::endl;
+                    std::cout << "Account Number: " << transaction.account_number << std::endl;
+                    std::cout << "Total Balance: " << transaction.total_balance << std::endl;
 
-                    student.readStudentData();
+                    transaction.readTransactionData();
 
-                    temp_student_record.write(reinterpret_cast<char *>(&student), sizeof(student));
+                    temp_transaction_record.write(reinterpret_cast<char *>(&transaction), sizeof(transaction));
                 }
                 else
                 {
-                    temp_student_record.write(reinterpret_cast<char *>(&student), sizeof(student));
+                    temp_transaction_record.write(reinterpret_cast<char *>(&transaction), sizeof(transaction));
                 }
             }
 
-            temp_student_record.close();
+            temp_transaction_record.close();
         }
         else
         {
-            std::cout << "Cannot open file updateStudent Function\n";
+            std::cout << "Cannot open file update Transaction Function\n";
         }
 
         this->closeFile();
 
         system("rm student_record.bin");
-        system("mv student_record_temp.bin student_record.bin");
+        system("mv transaction_record_temp.bin transaction_record.bin");
     }
 
-    void deleteStudent()
+    void deleteTransaction()
     {
 
-        std::string roll_number_to_update;
+        std::string account_number_to_update;
 
-        std::cout << "Enter the Roll number of the Record you want to delete?\n";
+        std::cout << "Enter the Account Number of the Record you want to delete?\n";
         std::cout << "-->";
-        std::cin >> roll_number_to_update;
+        std::cin >> account_number_to_update;
 
         if (this->openFile("read+append"))
         {
             int i = 0;
 
-            std::fstream temp_student_record;
+            std::fstream temp_transaction_record;
 
-            temp_student_record.open("student_record_temp.bin", std::ios::out | std::ios::binary);
+            temp_transaction_record.open("transaction_record_temp.bin", std::ios::out | std::ios::binary);
 
-            while ((i++) < this->total_students)
+            while ((i++) < this->total_transactions)
             {
-                student_record_file.read(reinterpret_cast<char *>(&student), sizeof(student));
+                transaction_record_file.read(reinterpret_cast<char *>(&transaction), sizeof(transaction));
 
-                if (!(student.roll_number == roll_number_to_update))
+                if (!(transaction.account_number == account_number_to_update))
                 {
-                    temp_student_record.write(reinterpret_cast<char *>(&student), sizeof(student));
+                    temp_transaction_record.write(reinterpret_cast<char *>(&transaction), sizeof(transaction));
                 }
             }
 
-            temp_student_record.close();
+            temp_transaction_record.close();
 
-            this->total_students -= 1;
+            this->total_transactions -= 1;
         }
         else
         {
-            std::cout << "Cannot open file updateStudent Function\n";
+            std::cout << "Cannot open file updateTransaction Function\n";
         }
 
         this->closeFile();
 
-        system("rm student_record.bin");
-        system("mv student_record_temp.bin student_record.bin");
+        system("rm transaction_record.bin");
+        system("mv transaction_record_temp.bin transaction_record.bin");
     }
 
-    void displayStudent()
+    void displayTransaction()
     {
         if (this->openFile("read"))
         {
-            std::cout << std::left << std::setw(20) << "Student Name"
-                      << std::left << std::setw(10) << "Department"
-                      << std::left << std::setw(10) << "Roll Number\n";
+            std::cout << std::setw(30) << "First Name"
+                      << std::setw(30) << "Last Name"
+                      << std::setw(30) << "Account Number"
+                      << std::setw(30) << "Total Balance\n";
 
             int i = 0;
-            while ((i++) < this->total_students)
+            while ((i++) < this->total_transactions)
             {
-                student_record_file.read(reinterpret_cast<char *>(&student), sizeof(student));
-                std::cout << std::left << std::setw(20) << student.name
-                          << std::left << std::setw(10) << student.department
-                          << std::left << std::setw(10) << student.roll_number
+                transaction_record_file.read(reinterpret_cast<char *>(&transaction), sizeof(transaction));
+                std::cout << std::setw(30) << transaction.first_name
+                          << std::setw(30) << transaction.last_name
+                          << std::setw(30) << transaction.account_number
+                          << std::setw(30) << transaction.total_balance
                           << std::endl;
             }
             std::cout << std::endl;
@@ -410,18 +415,18 @@ public:
 };
 int main()
 {
-    StudentRecord BCT;
+    TransactionRecord BCT;
     char choice;
 
     while (true)
     {
         system("clear");
-        std::cout << "STUDENT RECORD MANAGEMENT\n\n";
+        std::cout << "Transaction RECORD MANAGEMENT\n\n";
 
-        std::cout << "1. Add Student\n";
-        std::cout << "2. Update Student\n";
-        std::cout << "3. Delete Student\n";
-        std::cout << "4. Display Student\n";
+        std::cout << "1. Add Transaction\n";
+        std::cout << "2. Update Transaction\n";
+        std::cout << "3. Delete Transaction\n";
+        std::cout << "4. Display Transaction\n";
 
         std::cout << "-->";
         std::cin >> choice;
@@ -431,9 +436,9 @@ int main()
         case '1':
             system("clear");
 
-            BCT.addStudent();
+            BCT.addTransaction();
 
-            std::cout << "Student has been added successfully\nPress any key to continue\n";
+            std::cout << "Transaction has been added successfully\nPress any key to continue\n";
             getchar();
             getchar();
 
@@ -441,18 +446,18 @@ int main()
         case '2':
             system("clear");
 
-            BCT.updateStudent();
+            BCT.updateTransaction();
 
-            std::cout << "Student has been update successfully\nPress any key to continue\n";
+            std::cout << "Transaction has been update successfully\nPress any key to continue\n";
             getchar();
             getchar();
 
             break;
         case '3':
             system("clear");
-            BCT.deleteStudent();
+            BCT.deleteTransaction();
 
-            std::cout << "Student has been delete successfully\nPress any key to continue\n";
+            std::cout << "Transaction has been delete successfully\nPress any key to continue\n";
             getchar();
             getchar();
 
@@ -460,7 +465,7 @@ int main()
         case '4':
             system("clear");
 
-            BCT.displayStudent();
+            BCT.displayTransaction();
 
             std::cout << "\nPress any key to continue\n";
             getchar();
@@ -468,7 +473,7 @@ int main()
 
             break;
         case 'q':
-            system("rm student_record.bin");
+            system("rm transaction_record.bin");
             exit(EXIT_SUCCESS);
             break;
 
