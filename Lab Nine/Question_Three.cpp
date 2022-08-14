@@ -41,8 +41,7 @@ public:
     {
         if (isFull())
         {
-            cout << "Full Stack Exception" << endl;
-            return;
+            throw "Stack Overflow\n";
         }
         stack_top_index = stack_top_index + 1;
         stack_array[stack_top_index] = value;
@@ -52,7 +51,7 @@ public:
 
         if (isEmpty())
         {
-            cout << "Stack Empty Exception" << endl;
+            throw "Stack Underflow\n";
             return INT_MIN;
         }
         T removed = stack_array[stack_top_index];
@@ -62,11 +61,14 @@ public:
 
     void show()
     {
-        for (int i = stack_top_index; i >= 0; i--)
+        if (stack_top_index != -1)
         {
-            cout << stack_array[i] << endl;
+            for (int i = stack_top_index; i >= 0; i--)
+            {
+                cout << stack_array[i] << endl;
+            }
+            std::cout << "\n";
         }
-        std::cout << "\n";
     }
 };
 
@@ -74,21 +76,30 @@ int main()
 {
     Stack<int> stack_one(4);
 
-    stack_one.push(1);
-    stack_one.push(2);
-    stack_one.push(4);
-    stack_one.pop();
+    try
+    {
+        stack_one.push(1);
+        stack_one.pop();
+        stack_one.pop();
+    }
+
+    catch (const char *error)
+    {
+        std::cout << error;
+    }
     stack_one.show();
 
     Stack<float> stack_two(4);
-    stack_two.push(1.2);
-    stack_two.push(1.4);
+
+    try
+    {
+        stack_two.push(1.2);
+        stack_two.push(1.4);
+    }
+    catch (const char *error)
+    {
+        std::cout << error;
+    }
     stack_two.show();
-
-    Stack<char> stack_three(4);
-    stack_three.push('a');
-    stack_three.push('b');
-    stack_three.show();
-
     return 0;
 }
