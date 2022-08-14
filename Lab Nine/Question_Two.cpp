@@ -58,20 +58,17 @@ public:
     {
         return queueSize() == 0;
     }
+
     bool isFull()
     {
         return queueSize() == queue_size;
     }
-    int front()
-    {
-        return queue_array[(queue_front + 1) % queue_size];
-    }
+
     void enQueue(T value)
     {
         if (isFull())
         {
-            cout << "Overflow Error" << endl;
-            return;
+            throw "Overflow Error\n";
         }
         queue_rear = (queue_rear + 1) % queue_size; // This will move rear in circular manner.
         queue_array[queue_rear] = value;
@@ -80,8 +77,7 @@ public:
     {
         if (isEmpty())
         {
-            cout << "Underflow Error" << endl;
-            return INT_MIN;
+            throw "Underflow Error\n";
         }
 
         T removed;
@@ -107,29 +103,32 @@ public:
 
 int main()
 {
-    Queue<int> queue_one(3);
+    Queue<int> queue_one(1);
 
-    queue_one.enQueue(1);
-    queue_one.enQueue(2);
-    queue_one.enQueue(3);
+    try
+    {
+        queue_one.enQueue(1);
+        queue_one.enQueue(2);
+    }
+    catch (const char *error)
+    {
+        std::cout << error;
+    }
 
     queue_one.show();
 
     Queue<float> queue_two(3);
 
-    queue_two.enQueue(1.2);
-    queue_two.enQueue(2.2);
-    queue_two.enQueue(3.8);
+    try
+    {
+        queue_two.enQueue(1.2);
+    }
+    catch (const char *error)
+    {
+        std::cout << error;
+    }
 
     queue_two.show();
-
-    Queue<char> queue_three(3);
-
-    queue_three.enQueue('a');
-    queue_three.enQueue('b');
-    queue_three.enQueue('c');
-
-    queue_three.show();
 
     return 0;
 }
