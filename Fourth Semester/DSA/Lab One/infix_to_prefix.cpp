@@ -36,7 +36,11 @@ std::string reverseString(std::string expression)
 
 int getPrecedance(char character)
 {
-    if (character == '*' || character == '/')
+    if (character == '^')
+    {
+        return 3;
+    }
+    else if (character == '*' || character == '/')
     {
         return 2;
     }
@@ -52,13 +56,25 @@ std::string infixToPreFix(std::string infix)
     std::string prefix = "";
 
     Stack<char> infixStack(10);
+
     infix = reverseString(infix);
 
     for (int i = 0; i < infix.length(); i++)
     {
         char character = infix[i];
 
-        if (isOpeningParenthesis(character))
+        if (character == '^')
+        {
+            if (!infixStack.isEmpty())
+            {
+                if (infixStack.top() == '^')
+                {
+                    prefix.push_back(infixStack.pop());
+                }
+            }
+            infixStack.push(character);
+        }
+        else if (isOpeningParenthesis(character))
         {
             char poppedElement;
 
@@ -78,7 +94,7 @@ std::string infixToPreFix(std::string infix)
         }
         else
         {
-            while (!(infixStack.isEmpty() || getPrecedance(character) > getPrecedance(infixStack.top()) || isClosingParenthesis(character)))
+            while (!(infixStack.isEmpty() || getPrecedance(character) >= getPrecedance(infixStack.top()) || isClosingParenthesis(character)))
             {
                 char poppedElement = infixStack.pop();
                 prefix.push_back(poppedElement);

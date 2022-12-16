@@ -1,8 +1,10 @@
 #include "stack.hpp"
+#include <cmath>
 
 bool isOperator(char character)
 {
-    return character == '/' ||
+    return character == '^' ||
+           character == '/' ||
            character == '*' ||
            character == '+' ||
            character == '-';
@@ -18,15 +20,15 @@ int evaluatePostFix(std::string postFixExpression)
 
         if (isOperator(character))
         {
-            int operandOne = postFixStack.pop() - '0';
             int operandTwo = postFixStack.pop() - '0';
-
-            std::cout << operandOne << "\n";
-            std::cout << operandTwo << "\n";
+            int operandOne = postFixStack.pop() - '0';
 
             int result;
             switch (character)
             {
+            case '^':
+                result = pow(operandOne, operandTwo);
+                break;
             case '-':
                 result = operandOne - operandTwo;
                 break;
@@ -40,7 +42,6 @@ int evaluatePostFix(std::string postFixExpression)
                 result = operandOne / operandTwo;
                 break;
             }
-            std::cout << result << "\n";
 
             postFixStack.push(result + '0');
         }

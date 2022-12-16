@@ -25,7 +25,11 @@ bool isOperator(char character)
 
 int getPrecedance(char character)
 {
-    if (character == '*' || character == '/')
+    if (character == '^')
+    {
+        return 3;
+    }
+    else if (character == '*' || character == '/')
     {
         return 2;
     }
@@ -46,7 +50,11 @@ std::string infixToPostFix(std::string infix)
     {
         char character = infix[i];
 
-        if (isClosingParenthesis(character))
+        if (character == '^')
+        {
+            infixStack.push(character);
+        }
+        else if (isClosingParenthesis(character))
         {
             char poppedElement;
 
