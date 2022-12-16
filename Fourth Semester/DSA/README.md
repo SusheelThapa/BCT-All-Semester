@@ -1,0 +1,5 @@
+# Data Structure and Algorithm Lab
+
+| Lab |                                                                                                                                                  Program                                                                                                                                                   | Language |
+| :-: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------: |
+| One | <li>[Create Stack ADT](./Lab%20One/stack.hpp)</li><li>[Infix to Postfix](./Lab%20One/infix_to_postfix.cpp)</li><li>[Infix to Prefix](./Lab%20One/infix_to_prefix.cpp)</li><li>[Evaluate Postfix](./Lab%20One/evaluate_postfix.cpp)</li><li>[Balance Parenthesis](./Lab%20One/balance_parenthesis.cpp)</li> |   CPP    |
