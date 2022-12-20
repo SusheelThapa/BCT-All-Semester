@@ -64,10 +64,11 @@ public:
 
     void display()
     {
-        for (int i = front; i <= rear; i = (i + 1) % queueSize)
+        for (int i = front; i != rear; i = (i + 1) % queueSize)
         {
             cout << this->queueArray[i] << " ";
         }
+        cout << this->queueArray[rear];
     }
 };
 
