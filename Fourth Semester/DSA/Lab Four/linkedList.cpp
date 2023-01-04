@@ -41,6 +41,12 @@ public:
 
         Node<T> *newNode = new Node(data);
 
+        if (head == nullptr)
+        {
+            head = newNode;
+            return newNode->data;
+        }
+
         Node<T> *temp = head;
 
         while (temp->next != nullptr)
@@ -170,10 +176,10 @@ int main()
 {
     LinkedList<int> l;
 
+    l.insertAtEnd(500);
     l.insertAtBeginning(10);
     l.insertAtBeginning(2);
 
-    l.insertAtEnd(500);
     l.insertAtEnd(60);
 
     l.insertAfterNthNode(3, 1000);
