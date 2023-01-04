@@ -158,6 +158,19 @@ public:
         return data;
     }
 
+    T getNthElement(int nthNode)
+    {
+        Node<T> *temp = head;
+        int count = 1;
+
+        while (count < nthNode)
+        {
+            temp = temp->next;
+            count++;
+        }
+        return temp->data;
+    }
+
     void display()
     {
         if (head != nullptr)
