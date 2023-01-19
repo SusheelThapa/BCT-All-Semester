@@ -11,5 +11,5 @@
 |  Seven  |         [RK Four method](./rkMethod05.cpp#50)          |     CPP     |
 |  Eight  |  [Gauss Elimination Method](./gaussElimination08.cpp)  |     CPP     |
 |  Nine   |       [Gauss Jordan Method](./guassJordan09.cpp)       |     CPP     |
-|   Ten   |      [Matrix Inverse Method](./matrixInverse.cpp)      |     CPP     |
+|   Ten   |      [Matrix Inverse Method](./matrixInverse10.cpp)      |     CPP     |
 | Eleven  | [Polynomial Curve Fitting](./polynomialCurveFit11.cpp) |     CPP     |
