@@ -62,7 +62,24 @@ def fullAdder(num_one, num_two):
     return addition[::-1]
 
 
+def fullSubtractor(num_one, num_two):
+    def twoSComplement(num: str):
+        print(num)
+        num = num.replace('1', '_')
+        num = num.replace('0', '1')
+        num = num.replace('_', '0')
+        return fullAdder(num, '1')
+
+    num_one = num_one.zfill(8)
+    num_two = num_two.zfill(8)
+
+    subtraction = fullAdder(num_one, twoSComplement(num_two))
+
+    return subtraction[1:] if len(subtraction) == 9 else subtraction
+
+
 # Uncomment the below line if you want to run Lab01.py
-# a = input("Binary Number One: ")
-# b = input("Binary Number Two: ")
-# print(f"Binary aadiiton of {a} and {b} is " + fullAdder(a, b))
+a = input("Binary Number One: ")
+b = input("Binary Number Two: ")
+print(f"Binary aadiiton of {a} and {b} is " + fullAdder(a, b))
+print(f"Binary subtraction of {a} and {b} is " + fullSubtractor(a, b))
