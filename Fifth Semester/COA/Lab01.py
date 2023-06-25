@@ -62,6 +62,7 @@ def fullAdder(num_one, num_two):
     return addition[::-1]
 
 
-a = input("Binary Number One: ")
-b = input("Binary Number Two: ")
-print(f"Binary aadiiton of {a} and {b} is " + fullAdder(a, b))
+# Uncomment the below line if you want to run Lab01.py
+# a = input("Binary Number One: ")
+# b = input("Binary Number Two: ")
+# print(f"Binary aadiiton of {a} and {b} is " + fullAdder(a, b))
