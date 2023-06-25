@@ -5,20 +5,10 @@ To design n-bit(4-bit) adder for unsigned integer binary numbers
 '''
 
 
-def fullAdder(num_one, num_two):
+def fullAdder(num_one, num_two, number_of_bits=8):
     '''
     Assume that we will get the string of equla length
     '''
-    def makeEqual(num_one, num_two):
-        '''
-        It is used to make the two binary number of equal length
-        '''
-        max_len = max(len(num_one), len(num_two))
-
-        num_one = num_one.zfill(max_len)
-        num_two = num_two.zfill(max_len)
-
-        return num_one, num_two, max_len
 
     def binaryAddition(bit_one, bit_two, carry):
         '''
@@ -43,13 +33,14 @@ def fullAdder(num_one, num_two):
             elif (bit_one == '1' and bit_two == '1'):
                 return '1', '1'
 
-    num_one, num_two, max_len = makeEqual(num_one, num_two)
+    num_one = num_one.zfill(number_of_bits)
+    num_two = num_two.zfill(number_of_bits)
 
     # Declaration of required variable
     addition = ''
     carry = '0'
 
-    for i in range(1, max_len+1):
+    for i in range(1, number_of_bits+1):
         # Carrying out operation bit wise
         carry, result = binaryAddition(num_one[-1 * i], num_two[-1*i], carry)
         addition += result
@@ -62,24 +53,10 @@ def fullAdder(num_one, num_two):
     return addition[::-1]
 
 
-def fullSubtractor(num_one, num_two):
-    def twoSComplement(num: str):
-        print(num)
-        num = num.replace('1', '_')
-        num = num.replace('0', '1')
-        num = num.replace('_', '0')
-        return fullAdder(num, '1')
 
-    num_one = num_one.zfill(8)
-    num_two = num_two.zfill(8)
+if __name__ == "__main__":
 
-    subtraction = fullAdder(num_one, twoSComplement(num_two))
+    a = input("Binary Number One: ")
+    b = input("Binary Number Two: ")
 
-    return subtraction[1:] if len(subtraction) == 9 else subtraction
-
-
-# Uncomment the below line if you want to run Lab01.py
-a = input("Binary Number One: ")
-b = input("Binary Number Two: ")
-print(f"Binary aadiiton of {a} and {b} is " + fullAdder(a, b))
-print(f"Binary subtraction of {a} and {b} is " + fullSubtractor(a, b))
+    print(f"Binary aadiiton of {a} and {b} is " + fullAdder(a, b))
