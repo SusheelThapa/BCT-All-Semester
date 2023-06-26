@@ -11,7 +11,8 @@ def binaryMultiplication(num_one: str, num_two: str):
     return result
 
 
-num_one = input('Binary Number One: ')
-num_two = input('Binary Number Two: ')
+if __name__ == '__main__':
+    num_one = input('Binary Number One: ')
+    num_two = input('Binary Number Two: ')
 
-print(f"{num_one} * {num_two} = {binaryMultiplication(num_one,num_two)}")
+    print(f"{num_one} * {num_two} = {binaryMultiplication(num_one,num_two)}")
