@@ -1,3 +1,4 @@
+/*Header files*/
 #include <graphics.h>
 #include <dos.h>
 #include <conio.h>
@@ -5,8 +6,9 @@
 #include <math.h>
 #include <stdlib.h>
 
-#define CLOCKWISE 1
-#define ANTICLOCKWISE -1
+/*Some constants that will be used in the program*/
+#define CLOCKWISE -1
+#define ANTICLOCKWISE 1
 
 /* Homogenous Coordinate Data type*/
 typedef struct Point
@@ -108,14 +110,16 @@ Point scaling(Point scaling_point, Point scaling_factor, Point scaling_fixed_poi
 
 	// Calculation of the scaled point
 	scaled_point = matMul3X3(vector, scaling_point);
+	scaled_point.x += scaling_fixed_point.x * (1 - scaling_factor.x);
+	scaled_point.y += scaling_fixed_point.y * (1 - scaling_factor.y);
 
 	return scaled_point;
 }
 
-Point rotation(Point rotating_point, float angle, int direction)
+Point rotation(Point rotating_point, float angle, int direction, Point center_of_rotation)
 {
 	/**
-	 * This functions rotate the given point using provided angle and direction
+	 * This functions rotate the given point using provided angle and direction and center_of_rotation
 	 * and return the rotated_point
 	 */
 
@@ -126,10 +130,11 @@ Point rotation(Point rotating_point, float angle, int direction)
 	// Create transformation matrix
 	vector[0][0] = cos(angle * direction);
 	vector[0][1] = -sin(angle * direction);
-	vector[0][2] = 0;
+	vector[0][2] = center_of_rotation.x * (1 - cos(angle * direction)) + center_of_rotation.y * sin(angle * direction);
 	vector[1][0] = sin(angle * direction);
 	vector[1][1] = cos(angle * direction);
-	vector[1][2] = 0;
+	vector[1][2] = center_of_rotation.y * (1 - cos(angle * direction)) - center_of_rotation.x * sin(angle * direction);
+	;
 	vector[2][0] = 0;
 	vector[2][1] = 0;
 	vector[2][2] = 1;
@@ -206,30 +211,38 @@ int main()
 	 * =====================================================================================
 	 */
 
-	int gd = DETECT, gm;
-
 	Triangle triangle = {{100, 50, 1}, {200, 50, 1}, {150, 100, 1}};
 
 	Triangle translated_triangle, scaled_triangle, rotated_triangle, reflected_triangle, sheared_triangle;
-	Point one, two, three;
 
-	Point translation_vector = {100, 100, 1};
+	/*Variable required for translation*/
+	Point translation_vector = {400, 300, 1};
+
+	/*Variable required for scaling*/
 	Point scaling_vector = {2, 2, 1};
-	Point origin = {0, 0, 0};
+	Point scale_fixed_point = {50, -100, 0};
+
+	/*Variable required for shearing*/
 	Point ref_axis = {-2, 0, 1}, shear_point_value = {0, 2, 1};
 
+	/* Variable required for rotation */
+	Point center_of_rotation = {200, 400, 0};
+	float angle = M_PI / 6;
+
+	/* Initialization of graphics library variables */
+	int gd = DETECT, gm;
 	clrscr();
 
 	initgraph(&gd, &gm, "c:\\turboc3\\bgi");
-
+	putpixel(200, 400, RED);
+	putpixel(200, 401, RED);
+	putpixel(201, 400, RED);
+	putpixel(201, 401, RED);
 	/**
 	 * =====================================================================================
 	 * 							Drawing X Axis and Y Axis and Orginal Triangle
 	 * =====================================================================================
 	 */
-
-	line(0, 240, 640, 240);
-	line(320, 0, 320, 480);
 
 	setcolor(WHITE);
 
@@ -248,14 +261,8 @@ int main()
 	translated_triangle.side_two = translation(translated_triangle.side_two, translation_vector);
 	translated_triangle.side_three = translation(translated_triangle.side_three, translation_vector);
 
-	// Adding padding
-	translated_triangle.side_one.x += 320;
-	translated_triangle.side_two.x += 320;
-	translated_triangle.side_three.x += 320;
-
 	// Rendering the triangle
 	setcolor(GREEN);
-	setlinestyle(SOLID_LINE, USERBIT_LINE, 10);
 
 	drawTriangle(translated_triangle);
 
@@ -267,18 +274,12 @@ int main()
 
 	scaled_triangle = triangle;
 
-	scaled_triangle.side_one = scaling(scaled_triangle.side_one, scaling_vector, origin);
-	scaled_triangle.side_two = scaling(scaled_triangle.side_two, scaling_vector, origin);
-	scaled_triangle.side_three = scaling(scaled_triangle.side_three, scaling_vector, origin);
-
-	// Adding Padding
-	scaled_triangle.side_one.y += 240;
-	scaled_triangle.side_two.y += 240;
-	scaled_triangle.side_three.y += 240;
+	scaled_triangle.side_one = scaling(scaled_triangle.side_one, scaling_vector, scale_fixed_point);
+	scaled_triangle.side_two = scaling(scaled_triangle.side_two, scaling_vector, scale_fixed_point);
+	scaled_triangle.side_three = scaling(scaled_triangle.side_three, scaling_vector, scale_fixed_point);
 
 	// Rendering the triangle
 	setcolor(BLUE);
-	setlinestyle(SOLID_LINE, USERBIT_LINE, 100);
 
 	drawTriangle(scaled_triangle);
 
@@ -291,22 +292,13 @@ int main()
 	rotated_triangle = triangle;
 
 	// Calculating translted point
-	rotated_triangle.side_one = rotation(rotated_triangle.side_one, M_PI / 10, ANTICLOCKWISE);
-	rotated_triangle.side_two = rotation(rotated_triangle.side_two, M_PI / 10, ANTICLOCKWISE);
-	rotated_triangle.side_three = rotation(rotated_triangle.side_three, M_PI / 10, ANTICLOCKWISE);
-
-	// Adding padding
-	rotated_triangle.side_one.x += 320;
-	rotated_triangle.side_two.x += 320;
-	rotated_triangle.side_three.x += 320;
-
-	rotated_triangle.side_one.y += 240;
-	rotated_triangle.side_two.y += 240;
-	rotated_triangle.side_three.y += 240;
+	rotated_triangle.side_one = rotation(rotated_triangle.side_one, angle, ANTICLOCKWISE, center_of_rotation);
+	rotated_triangle.side_two = rotation(rotated_triangle.side_two, angle, ANTICLOCKWISE, center_of_rotation);
+	rotated_triangle.side_three = rotation(rotated_triangle.side_three, angle, ANTICLOCKWISE, center_of_rotation);
 
 	// Rendering the triangle
 	setcolor(RED);
-	setlinestyle(SOLID_LINE, USERBIT_LINE, 100);
+
 	drawTriangle(rotated_triangle);
 
 	/**
@@ -322,10 +314,13 @@ int main()
 
 	// Rendering the triangle
 	setcolor(LIGHTCYAN);
-	setlinestyle(SOLID_LINE, USERBIT_LINE, 100);
-	line(320, 0, 320, 480);
-	
+
 	drawTriangle(sheared_triangle);
+
+	getch();
+	closegraph();
+
+	initgraph(&gd, &gm, "c:\\turboc3\\bgi");
 
 	/***
 	 * ============================================================================
@@ -364,7 +359,6 @@ int main()
 
 	// Rendering the triangle
 	setcolor(BROWN);
-	setlinestyle(SOLID_LINE, USERBIT_LINE, 400);
 	line(0, 480, 640, 0);
 
 	drawTriangle(reflected_triangle);
@@ -381,7 +375,6 @@ int main()
 
 	// Rendering the triangle
 	setcolor(YELLOW);
-	setlinestyle(SOLID_LINE, USERBIT_LINE, 100);
 	line(0, 240, 640, 240);
 
 	drawTriangle(reflected_triangle);
@@ -390,7 +383,7 @@ int main()
 	 * -----------------------------------------------------------------------------------------
 	 */
 
-	// Calculating the reflected point about x =320
+	// Calculating the reflected point about x = 320
 	reflected_triangle = triangle;
 	reflected_triangle.side_one = reflection(reflected_triangle.side_one, tan(M_PI / 2), 10);
 	reflected_triangle.side_two = reflection(reflected_triangle.side_two, tan(M_PI / 2), 10);
@@ -402,7 +395,6 @@ int main()
 
 	// Rendering the triangle
 	setcolor(MAGENTA);
-	setlinestyle(SOLID_LINE, USERBIT_LINE, 100);
 	line(320, 0, 320, 480);
 	drawTriangle(reflected_triangle);
 
