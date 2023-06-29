@@ -12,3 +12,6 @@
 - Fourth Semester
   - [Data Structure and Alorithm](./Fourth%20Semester/DSA/)
   - [Numerical Method](./Fourth%20Semester/NM/)
+- Fifth Semester
+  - [Computer Organzation and Architecture](./Fifth%20Semester/COA/)
+  - [Computer Graphics](./Fifth%20Semester/Computer%20Graphics/)
