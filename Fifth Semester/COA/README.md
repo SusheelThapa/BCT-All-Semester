@@ -5,5 +5,5 @@
 3. [Multiplication of two unsigned binary numbers using partial product method](./Lab03.py)
 4. [Restoring division algorithm](./Lab04.py)
 5. [Non-restoring division algorithm](./Lab05.py)
-6. Page Replacement algorithm
+6. [Page Replacement algorithm](./Lab06.py)
 7. [Booth's Algorithm for signed binary multiplication](./Lab07.py)
