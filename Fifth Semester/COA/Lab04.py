@@ -1,8 +1,8 @@
 # To implement restoring division algorithm in digital computer.
 
 
-from Lab01 import fullSubtractor, fullAdder
-
+from Lab01 import  fullAdder
+from Lab03 import fullSubtractor
 
 def restoringDivision(dividend, divisor, no_of_bits=8):
     # Setting the required variable
