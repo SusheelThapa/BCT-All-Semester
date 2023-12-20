@@ -15,3 +15,6 @@
 - Fifth Semester
   - [Computer Organzation and Architecture](./Fifth%20Semester/COA/)
   - [Computer Graphics](./Fifth%20Semester/Computer%20Graphics/)
+- Sixth Semester
+
+  - [Database Management System](./Sixth%20Semester/Database/)
